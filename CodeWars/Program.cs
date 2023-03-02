@@ -902,3 +902,135 @@ public static class Kata2
     }
 }*/
 
+
+/*
+public static class Kata2
+{
+    //         6 kyu   Are they the "same"?
+    // Given two arrays a and b write a function comp(a, b) (orcompSame(a, b))
+    // that checks whether the two arrays have the "same" elements, with the same
+    // multiplicities(the multiplicity of a member is the number of times it appears).
+    // "Same" means, here, that the elements in b are the elements in a squared,
+    // regardless of the order.
+    //         Examples
+    //         Valid arrays
+    // a = [121, 144, 19, 161, 19, 144, 19, 11]
+    // b = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+    //         comp(a, b) returns true because in b 121 is the square of 11, 14641
+    //         is the square of 121, 20736 the square of 144, 361 the square of 19,
+    //         25921 the square of 161, and so on.It gets obvious if we write b's
+    //         elements in terms of squares:
+    // 
+    // a = [121, 144, 19, 161, 19, 144, 19, 11]
+    //         b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
+    //               fd        pp       kk     fk       yy     kf       fj      hh          
+    //         Invalid arrays
+    // If, for example, we change the first number to something else, comp is not
+    // returning true anymore:
+    // 
+    // a = [121, 144, 19, 161, 19, 144, 19, 11]
+    //         b = [132, 14641, 20736, 361, 25921, 361, 20736, 361]
+    //         comp(a, b) returns false because in b 132 is not the square of any
+    //         number of a.
+    //         a = [121, 144, 19, 161, 19, 144, 19, 11]
+    // b = [121, 14641, 20736, 36100, 25921, 361, 20736, 361]
+    //         comp(a, b) returns false because in b 36100 is not the square of any
+    //         number of a.
+    // 
+    // 
+    //         Remarks
+    //         a or b might be [] or { }
+    //         (all languages except R, Shell).
+    // a or b might be nil or null or None or nothing(except in C++, COBOL, Crystal,
+    // D, Dart, Elixir, Fortran, F#, Haskell, Nim, OCaml, Pascal, Perl, PowerShell,
+    // Prolog, PureScript, R, Racket, Rust, Shell, Swift).
+    // If a or b are nil (or null or None, depending on the language), the problem
+    // doesn't make sense so return false.
+
+
+
+
+    public static bool comp(int[] a, int[] b)
+    {
+        if ((a == null) || (b == null)) return false;
+
+
+        var res = a.Select(i => i * i).OrderBy(i => i).SequenceEqual(b.OrderBy(n => n));
+
+        return res;
+    }
+
+    static void Main(string[] args)
+    {
+        int[] a = new int[] { 121, 144, 19, 161, 19, 144, 19, 11 };
+
+        int[] b = new int[] { 121, 14641, 20736, 361, 25921, 361, 20736, 361 };
+        int[] c = new int[] { 11 * 11, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19 };
+        int[] d = new int[] { 132, 14641, 20736, 361, 25921, 361, 20736, 361 };
+        int[] e = new int[] { 121, 14641, 20736, 36100, 25921, 361, 20736, 361 };
+
+
+        Console.WriteLine(comp(a, b));
+        Console.WriteLine(comp(a, c));
+        Console.WriteLine(comp(a, d));
+        Console.WriteLine(comp(a, e));
+    }
+}
+*/
+
+
+/*
+public static class Kata2
+{
+
+    //         6 kyu   Build a pile of Cubes
+    // Instructions
+    // Your task is to construct a building which will be a pile of n cubes.The cube
+    // at the bottom will have a volume of n^3, the cube above will have volume of
+    // ( n - 1 ) ^3 and so on until the top which will have a volume of 1^3
+
+    // You are given the total volume m of the building. Being given m can you find the
+    // number n of cubes you will have to build?
+
+    // The parameter of the function findNb (find_nb, find-nb, findNb, ...)
+    // will be an integer m and you have to return the integer n such as
+    // n^3 + ( n - 1 )^3 + ( n - 2 )^3 + ... + 1^3 = m  if such a n exists or -1 if there is no such n.
+
+    //         Examples:
+    // findNb(1071225) --> 45
+    // 
+    // findNb(91716553919377) --> -1
+
+    // Assert.AreEqual(2022, ASum.findNb(4183059834009));
+    //  Assert.AreEqual(-1, ASum.findNb(24723578342962));
+    // Assert.AreEqual(4824, ASum.findNb(135440716410000));
+    //  Assert.AreEqual(3568, ASum.findNb(40539911473216));
+
+    public static long findNb(long m)
+    {
+        int times = 1;
+        long suma = 0;
+
+        while (suma < m)
+        {
+            suma += (long)Math.Pow(times, 3);
+            times++;
+        }
+
+        return suma != m ? -1 : times - 1;
+    }
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine(findNb(4183059834009));
+        Console.WriteLine(findNb(24723578342962));
+        Console.WriteLine(findNb(135440716410000));
+        Console.WriteLine(findNb(40539911473216));
+    }
+}
+
+*/
+
+
+
+
