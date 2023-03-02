@@ -2,54 +2,32 @@
 
 internal class Repa
 {
-    //public static class Kata2
-    //{
+    public static class Kata2
+    {
 
-    //    //         6 kyu   Build a pile of Cubes
-    //    // Instructions
-    //    // Your task is to construct a building which will be a pile of n cubes.The cube
-    //    // at the bottom will have a volume of n^3, the cube above will have volume of
-    //    // ( n - 1 ) ^3 and so on until the top which will have a volume of 1^3
 
-    //    // You are given the total volume m of the building. Being given m can you find the
-    //    // number n of cubes you will have to build?
+        public static long findNb(long m)
+        {
+            int times = 1;
+            long suma = 0;
 
-    //    // The parameter of the function findNb (find_nb, find-nb, findNb, ...)
-    //    // will be an integer m and you have to return the integer n such as
-    //    // n^3 + ( n - 1 )^3 + ( n - 2 )^3 + ... + 1^3 = m  if such a n exists or -1 if there is no such n.
+            while (suma < m)
+            {
+                suma += (long)Math.Pow(times, 3);
+                times++;
+            }
 
-    //    //         Examples:
-    //    // findNb(1071225) --> 45
-    //    // 
-    //    // findNb(91716553919377) --> -1
+            return suma != m ? -1 : times - 1;
+        }
 
-    //    // Assert.AreEqual(2022, ASum.findNb(4183059834009));
-    //    //  Assert.AreEqual(-1, ASum.findNb(24723578342962));
-    //    // Assert.AreEqual(4824, ASum.findNb(135440716410000));
-    //    //  Assert.AreEqual(3568, ASum.findNb(40539911473216));
-
-    //    public static long findNb(long m)
-    //    {
-    //        int times = 1;
-    //        long suma = 0;
-
-    //        while (suma < m)
-    //        {
-    //            suma += (long)Math.Pow(times, 3);
-    //            times++;
-    //        }
-
-    //        return suma != m ? -1 : times - 1;
-    //    }
-
-    //    static void Main(string[] args)
-    //    {
-    //        Console.WriteLine(findNb(4183059834009));
-    //        Console.WriteLine(findNb(24723578342962));
-    //        Console.WriteLine(findNb(135440716410000));
-    //        Console.WriteLine(findNb(40539911473216));
-    //    }
-    //}
+        static void Main(string[] args)
+        {
+            Console.WriteLine(findNb(4183059834009));
+            Console.WriteLine(findNb(24723578342962));
+            Console.WriteLine(findNb(135440716410000));
+            Console.WriteLine(findNb(40539911473216));
+        }
+    }
 
 
 
