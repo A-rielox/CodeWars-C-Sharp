@@ -1,31 +1,79 @@
-﻿
-
-internal class Repa
+﻿internal class Repa
 {
+    //     6 kyu   Ka Ka Ka cypher - words only vol 1
+    // Ka ka ka cypher is a cypher used by small children in some country.
+    // When a girl wants to pass something to the other girls and there are
+    // some boys nearby, she can use Ka cypher.So only the other girls are
+    // able to understand her.
+    // She speaks using KA, ie.:
+    // ka thi ka s ka bo ka y ka i ka s ka u ka gly what simply means this
+    // boy is ugly.
+    // 
+    // Task
+    // Write a function that accepts a string word and returns encoded
+    // message using ka cypher.
+    // 
+    // Our rules:
+    // 
+    // The encoded word should start from ka.
+    // The ka goes after vowel (a, e, i, o, u)
+    // When there is multiple vowels together, the ka goes only after the
+    // last vowel
+    // When the word is finished by a vowel, do not add the ka after
+    // Input/Output
+    // The word string consists of only lowercase and uppercase characters.
+    // There is only 1 word to convert - no white spaces.
+    // 
+    // Example
+    // "a" => "kaa"
+    // "ka" => "kaka"
+    // "aa" => "kaaa"  
+    // "Abbaa" => "kaAkabbaa"
+    // "maintenance" => "kamaikantekanakance"
+    // "Woodie" => "kaWookadie"
+    // "Incomprehensibilities" => "kaIkancokamprekahekansikabikalikatiekas"
+
+
+
+
     public static class Kata2
     {
 
 
-        public static long findNb(long m)
+        public static string KaCokadekaMe(string word)
         {
-            int times = 1;
-            long suma = 0;
+            var indexes = new List<int>();
 
-            while (suma < m)
+            for (int i = 0; i < word.Length; i++)
             {
-                suma += (long)Math.Pow(times, 3);
-                times++;
+                if ("aeiou".Contains(word.ToLower()[i]))
+                {
+                    indexes.Add(i);
+                }
             }
 
-            return suma != m ? -1 : times - 1;
+            var listilla = new List<string>();
+
+            for (int i = 0; i < indexes.Count - 1; i++)
+            {
+                listilla.Add( word.Substring( indexes[i], indexes[i + 1] - indexes[i] ));
+            }
+
+
+
+            return "kawokard";
         }
+
 
         static void Main(string[] args)
         {
-            Console.WriteLine(findNb(4183059834009));
-            Console.WriteLine(findNb(24723578342962));
-            Console.WriteLine(findNb(135440716410000));
-            Console.WriteLine(findNb(40539911473216));
+            //Console.WriteLine(KaCokadekaMe("a"));
+            //Console.WriteLine(KaCokadekaMe("ka"));
+            //Console.WriteLine(KaCokadekaMe("aa"));
+            Console.WriteLine(KaCokadekaMe("Abbaa"));
+            Console.WriteLine(KaCokadekaMe("maintenance"));
+            Console.WriteLine(KaCokadekaMe("Woodie"));
+            Console.WriteLine(KaCokadekaMe("Incomprehensibilities"));
         }
     }
 

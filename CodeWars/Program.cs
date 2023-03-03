@@ -1,8 +1,11 @@
 ﻿//Given an integral number, determine if it's a square number:
 
-//    In mathematics, a square number or perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.
+//    In mathematics, a square number or perfect square is an
+//    integer that is the square of an integer; in other words,
+//    it is the product of some integer with itself.
 
-//The tests will always use some integral number, so don't worry about that in dynamic typed languages.
+//The tests will always use some integral number, so don't worry
+//about that in dynamic typed languages.
 //Examples
 
 //-1  =>  false
@@ -17,15 +20,11 @@ using System;
 
 namespace codewar
 {
-
-
     public class Kata
     {
         public static bool IsSquare(int n)
         {
-
             return Math.Sqrt(n) % 1 == 0;
-
         }
 
         static void Main(string[] args)
@@ -35,20 +34,17 @@ namespace codewar
              Console.WriteLine(Kata.IsSquare(7));
             Console.WriteLine(Kata.IsSquare(9));
         }
-
-
-
     }
-
-
 }
 */
 
 
 
 
-//Consider an array/list of sheep where some sheep may be missing from their place.
-//We need a function that counts the number of sheep present in the array (true means present).
+//Consider an array/list of sheep where some sheep may be missing
+//from their place.
+//We need a function that counts the number of sheep present in the
+//array (true means present).
 
 //For example,
 
@@ -108,14 +104,17 @@ public static class Kata
 //How good are you really?
 
 //There was a test in your class and you passed it. Congratulations!
-//But you're an ambitious person. You want to know if you're better than the average student in your class.
+//But you're an ambitious person. You want to know if you're better
+//than the average student in your class.
 
-//You receive an array with your peers' test scores. Now calculate the average and compare your score!
+//You receive an array with your peers' test scores. Now calculate the
+//average and compare your score!
 
 //Return True if you're better, else False!
 //Note:
 
-//Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+//Your points are not included in the array of your class's points. For
+//calculating the average point you may add your point to the given array!
 
 /*
 public class Kata
@@ -175,8 +174,6 @@ namespace Solution
     {
         public static double basicOp(char operation, double value1, double value2)
         {
-            
-
             var result = operation switch
             {
                 '+' => value1 + value2,
@@ -188,9 +185,6 @@ namespace Solution
             return result;
 
 
-
-
-
             // return op switch
             // {
             //     '+' => a + b,
@@ -199,22 +193,19 @@ namespace Solution
             //     '/' => a / b,
             //     _ => throw new ArgumentException("Unknown operation", $"{op}")
             // };
-
         }
 
         static void Main(string[] args)
         {
-
             Console.WriteLine(Program.basicOp('+', 4, 7));
             Console.WriteLine(Program.basicOp('-', 15, 18));
             Console.WriteLine(Program.basicOp('*', 5, 5));
             Console.WriteLine(Program.basicOp('/', 49, 7));
-
         }
     }
 }
-
 */
+
 
 
 
@@ -302,12 +293,8 @@ public static class Kata
 //     Assert.AreEqual("You are tsomla to the last test", Kata.SpinWords("You are almost to the last test"));
 //     Assert.AreEqual("Just gniddik ereht is llits one more", Kata.SpinWords("Just kidding there is still one more"));
 
-/*
-using System.Collections.Generic;
-using System.Linq;
-using System;
-using System.Runtime.CompilerServices;
 
+/*
 public class Kata
 {
     public static string SpinWords(string sentence)
@@ -338,19 +325,18 @@ public class Kata
 
         var arr = sentence.Split(" ");
 
-        var spinedArr = arr.Select(word => word.Length >= 5 ? String.Concat(word.Reverse()) : word);
+        var spinedArr = arr.Select(word => word.Length >= 5 ?
+                                        String.Concat(word.Reverse()) : word);
 
         return String.Join(" ", spinedArr);
     }
 
     static void Main(string[] args)
     {
-
         Console.WriteLine(Kata.SpinWords("Welcome"));
         Console.WriteLine(Kata.SpinWords("Hey fellow warriors"));
         Console.WriteLine(Kata.SpinWords("This is a test"));
         Console.WriteLine(Kata.SpinWords("This is another test"));
-
     }
 }
 */
@@ -585,8 +571,6 @@ public static class Kata
 
         return err.ToString() + '/' + s.Length.ToString();
 
-
-
         //
         //
         //  return s.Where(c => c > 'm').Count() + "/" + s.Length;
@@ -601,8 +585,6 @@ public static class Kata
         Console.WriteLine(PrinterError("aaaxbbbbyyhwawiwjjjwwm"));
         Console.WriteLine(PrinterError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"));
     }
-
-
 }
 
 */
@@ -642,6 +624,9 @@ public static class Kata
 */
 
 
+
+
+
 /*
 namespace CodeWars;
 
@@ -679,12 +664,14 @@ public static class Kata2
     static void Main(string[] args)
     {
         Console.WriteLine(GetVowelCount("abracadabra"));
-
     }
-
-
 }
 */
+
+
+
+
+
 
 /*
 namespace CodeWars;
@@ -711,7 +698,6 @@ public static class Kata
         Console.WriteLine(SumMix(new object[] { 9, 3, "7", "3" }));
         Console.WriteLine(SumMix(new object[] { "5", "0", 9, 3, 2, 1, "9", 6, 7 }));
         Console.WriteLine(SumMix(new object[] { "3", 6, 6, 0, "5", 8, 5, "6", 2, "0" }));
-
     }
 }
 */
@@ -721,7 +707,8 @@ public static class Kata
 /*
 // 8 kyu   Century From Year
 // Introduction
-//     The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
+//     The first century spans from the year 1 up to and including the year 100,
+// the second century - from the year 101 up to and including the year 200, etc.
 // 
 // Task
 // Given a year, return the century it is in.
@@ -738,7 +725,6 @@ public static class Kata
     public static int СenturyFromYear(int year)
     {
         return year % 100 == 0 ? year / 100 : (year / 100) + 1;
-
     }
 
 
@@ -748,7 +734,6 @@ public static class Kata
         Console.WriteLine(СenturyFromYear(1900));
         Console.WriteLine(СenturyFromYear(1601));
         Console.WriteLine(СenturyFromYear(2000));
-
     }
 }
 */
@@ -861,7 +846,10 @@ public static class Kata2
 public static class Kata2
 {
     // 6 kyu    Counting Duplicates
-    // Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets(both uppercase and lowercase) and numeric digits.
+    // Write a function that will return the count of distinct case-insensitive
+    // alphabetic characters and numeric digits that occur more than once in the
+    // input string. The input string can be assumed to contain only alphabets(both
+    // uppercase and lowercase) and numeric digits.
     // 
     // Example
     // "abcde" -> 0 # no characters repeats more than once
@@ -900,7 +888,11 @@ public static class Kata2
         Console.WriteLine(DuplicateCount("aA11"));
         Console.WriteLine(DuplicateCount("ABBA"));
     }
-}*/
+}
+*/
+
+
+
 
 
 /*
@@ -1030,6 +1022,218 @@ public static class Kata2
 }
 
 */
+
+
+
+
+// ----------------------------------------------------------------------------------------
+
+
+
+
+
+//     6 kyu  Jungerstein's Math Training Room: 1. How many zeros are at
+//     the end of n!! ?
+// Instructions
+// Define n!! as
+// 
+// n!! = 1 * 3 * 5 * ... * n if n is odd,
+// 
+// n!! = 2 * 4 * 6 * ... * n if n is even.
+// 
+// Hence 8!! = 2 * 4 * 6 * 8 = 384, there is no zero at the end.
+//
+// 30!! has 3 zeros at the end.
+// 
+// For a positive integer n, please count how many zeros are there at the
+// end of n!!.
+// 
+// Example:
+// 
+// 30!! = 2 * 4 * 6 * 8 * 10 * ... * 22 * 24 * 26 * 28 * 30 
+// 30!! = 42849873690624000 (3 zeros at the end)
+
+//Act(0, 8);
+//Act(1, 14);
+//Act(3, 30);
+
+
+
+/*
+using System.Numerics;
+
+public static class Kata2
+{
+
+
+    public static int CountZeros(int n)
+    {
+        var allFactors = Enumerable.Range(1, n).Where(i => n % 2 == 0 ? i % 2 == 0 : i % 2 != 0).ToArray();
+
+        BigInteger result = 1;
+        for (int i = 0; i <= allFactors.Count() - 1; i++)
+        {
+            result *= allFactors[i];
+        }
+
+
+        return string.Concat(result.ToString().Reverse()).TakeWhile(n => n == '0').Count();
+    }
+
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine(CountZeros(8));
+        Console.WriteLine(CountZeros(14));
+        Console.WriteLine(CountZeros(30));
+        Console.WriteLine(CountZeros(500));
+    }
+}
+*/
+
+
+
+
+//              ***************
+
+
+/*
+//     6 kyu  Does my number look big in this?
+// DESCRIPTION:
+// A Narcissistic Number(or Armstrong Number) is a positive number
+// which is the sum of its own digits, each raised to the power of
+// the number of digits in a given base. In this Kata, we will restrict
+// ourselves to decimal (base 10).
+// 
+// For example, take 153 (3 digits), which is narcissistic:
+// 
+//     1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+// and 1652 (4 digits), which isn't:
+// 
+//     1^4 + 6^4 + 5^4 + 2^4 = 1 + 1296 + 625 + 16 = 1938
+// The Challenge:
+// 
+// Your code must return true or false (not 'true' and 'false') depending
+// upon whether the given number is a Narcissistic number in base 10.
+// 
+// This may be True and False in your language, e.g.PHP.
+//     Error checking for text strings or other invalid inputs is not
+//     required, only valid positive non-zero integers will be passed
+//     into the function.
+
+// "1 is narcissitic" --> true
+// "371 is narcissitic" --> true
+
+
+public static class Kata2
+{
+
+
+    public static bool Narcissistic(int value)
+    {
+        var arr = value.ToString().Select(i => int.Parse(i.ToString())).ToList();
+
+        double tot = 0;
+
+        arr.ForEach(i => tot += Math.Pow(i, arr.Count()));
+
+        return tot == value ? true : false;
+    }
+
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine(Narcissistic(153));
+        Console.WriteLine(Narcissistic(371));
+        Console.WriteLine(Narcissistic(1652));
+    }
+}
+*/
+
+
+
+
+
+/*
+//     6 kyu
+// Is a number prime?
+// Define a function that takes an integer argument and returns a
+// logical value true or false depending on if the integer is a prime.
+//     Per Wikipedia, a prime number (or a prime) is a natural number
+// greater than 1 that has no positive divisors other than 1 and itself.
+// 
+// Requirements
+// You can assume you will be given an integer input.
+// You can not assume that the integer will be only positive.You may be
+// given negative numbers as well (or 0 ).
+
+// Example
+// is_prime(1)   false
+// is_prime(2)   true 
+// is_prime(-1)  false
+// yield return new TestCaseData(0).Returns(false);
+// yield return new TestCaseData(1).Returns(false);
+// yield return new TestCaseData(2).Returns(true);
+
+public static class Kata2
+{
+
+
+    public static bool IsPrime(int n)
+    {
+        if (n < 2) return false;
+        if (n == 2) return true;
+
+        var lessArr = Enumerable.Range(2, n - 2).ToList();
+
+        var isPrime = true;
+
+        for (int i = 0; i < lessArr.Count(); i++)
+        {
+            if (n % lessArr[i] == 0)
+            {
+                isPrime = false;
+                break;
+            }
+        }
+
+        return isPrime;
+
+        //if(n > 1)
+        //{
+        //    return Enumerable.Range(1, n).Where(i => n % i == 0).SequenceEqual(new[] {1, n});
+        //}
+        //else
+        //{
+        //    return false;
+        //}
+    }
+
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine(IsPrime(0));
+        Console.WriteLine(IsPrime(1));
+        Console.WriteLine(IsPrime(2));
+        Console.WriteLine(IsPrime(7));
+        Console.WriteLine(IsPrime(11));
+        Console.WriteLine(IsPrime(20));
+        Console.WriteLine(IsPrime(-5));
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
