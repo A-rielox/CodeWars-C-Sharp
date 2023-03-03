@@ -42,24 +42,7 @@
 
         public static string KaCokadekaMe(string word)
         {
-            var indexes = new List<int>();
-
-            for (int i = 0; i < word.Length; i++)
-            {
-                if ("aeiou".Contains(word.ToLower()[i]))
-                {
-                    indexes.Add(i);
-                }
-            }
-
-            var listilla = new List<string>();
-
-            for (int i = 0; i < indexes.Count - 1; i++)
-            {
-                listilla.Add( word.Substring( indexes[i], indexes[i + 1] - indexes[i] ));
-            }
-
-
+            
 
             return "kawokard";
         }
