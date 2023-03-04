@@ -1,65 +1,48 @@
-﻿internal class Repa
+﻿
+using static Repa;
+using System.Diagnostics.Metrics;
+
+internal class Repa
 {
-    //     6 kyu   Ka Ka Ka cypher - words only vol 1
-    // Ka ka ka cypher is a cypher used by small children in some country.
-    // When a girl wants to pass something to the other girls and there are
-    // some boys nearby, she can use Ka cypher.So only the other girls are
-    // able to understand her.
-    // She speaks using KA, ie.:
-    // ka thi ka s ka bo ka y ka i ka s ka u ka gly what simply means this
-    // boy is ugly.
-    // 
-    // Task
-    // Write a function that accepts a string word and returns encoded
-    // message using ka cypher.
-    // 
-    // Our rules:
-    // 
-    // The encoded word should start from ka.
-    // The ka goes after vowel (a, e, i, o, u)
-    // When there is multiple vowels together, the ka goes only after the
-    // last vowel
-    // When the word is finished by a vowel, do not add the ka after
-    // Input/Output
-    // The word string consists of only lowercase and uppercase characters.
-    // There is only 1 word to convert - no white spaces.
-    // 
-    // Example
-    // "a" => "kaa"
-    // "ka" => "kaka"
-    // "aa" => "kaaa"  
-    // "Abbaa" => "kaAkabbaa"
-    // "maintenance" => "kamaikantekanakance"
-    // "Woodie" => "kaWookadie"
-    // "Incomprehensibilities" => "kaIkancokamprekahekansikabikalikatiekas"
+    
 
 
 
+    // int index = char.ToUpper(c) - 64;
 
     public static class Kata2
     {
-
-
-        public static string KaCokadekaMe(string word)
+        public static string AlphabetPosition(string text)
         {
-            
+            //  var arr = text.Select(c =>
+            //  {
+            //      if (Char.IsLetter(c))
+            //      {
+            //          return char.ToUpper(c) - 64;
+            //      }else
+            //      {
+            //          return -1;
+            //      }                    
+            //  }).Where(n => n != -1);
+                
+            //  return string.Join(" ", arr);
 
-            return "kawokard";
+            var listilla = text.ToLower()
+                            .Where(c => char.IsLetter(c))
+                            .Select(c => "abcdefghijklmnopqrstuvwxyz".IndexOf(c) + 1)
+                            .ToArray();
+
+            return string.Join(" ", listilla);
         }
 
 
         static void Main(string[] args)
         {
-            //Console.WriteLine(KaCokadekaMe("a"));
-            //Console.WriteLine(KaCokadekaMe("ka"));
-            //Console.WriteLine(KaCokadekaMe("aa"));
-            Console.WriteLine(KaCokadekaMe("Abbaa"));
-            Console.WriteLine(KaCokadekaMe("maintenance"));
-            Console.WriteLine(KaCokadekaMe("Woodie"));
-            Console.WriteLine(KaCokadekaMe("Incomprehensibilities"));
+            Console.WriteLine(AlphabetPosition("The sunset sets at twelve o' clock."));
+            Console.WriteLine(AlphabetPosition("The narwhal bacons at midnight."));
+            // Console.WriteLine( AlphabetPosition( ) );
         }
     }
-
 
 
     public static int Count(string str)
@@ -200,19 +183,19 @@
         // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
 
-            // (string str)
-            // int nume = 0;
+        // (string str)
+        // int nume = 0;
 
-            // var distinctsssss = str.ToLower().Distinct().ToList();
+        // var distinctsssss = str.ToLower().Distinct().ToList();
 
-            // distinctsssss.ForEach(i => nume = str.ToLower().Count(c => c == i) > 1 ?
-            //                                             nume + 1 : nume + 0);
+        // distinctsssss.ForEach(i => nume = str.ToLower().Count(c => c == i) > 1 ?
+        //                                             nume + 1 : nume + 0);
 
-            // return nume;
+        // return nume;
 
         // oooooo
 
-            // var ggs = str.ToLower().GroupBy(c => c).Count(i => i.Count() > 1);
+        // var ggs = str.ToLower().GroupBy(c => c).Count(i => i.Count() > 1);
 
 
 
@@ -221,11 +204,11 @@
 
 
 
-            ////////////////////////////
+        ////////////////////////////
 
 
 
-            return 1;
+        return 1;
     }
 }
 

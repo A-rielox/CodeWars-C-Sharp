@@ -1225,6 +1225,53 @@ public static class Kata2
 
 
 
+/*
+//     6 kyu  Pair of gloves
+// Winter is coming, you must prepare your ski holidays.The
+// objective of this kata is to determine the number of pair
+// of gloves you can constitute from the gloves you have in your
+// drawer.
+// 
+// Given an array describing the color of each glove, return the
+// number of pairs you can constitute, assuming that only gloves of
+// the same color can form pairs.
+// 
+// Examples:
+// input = ["red", "green", "red", "blue", "blue"]
+// result = 2(1 red pair + 1 blue pair)
+// 
+// input = ["red", "red", "red", "red", "red", "red"]
+// result = 3(3 red pairs)
+
+// Assertion(0, new string[] {"Green", "Blue", "Purple", "Gray"});
+// Assertion(0, new string[] { });
+
+
+public static class Kata2
+{
+
+
+    public static int NumberOfPairs(string[] gloves)
+    {
+        var xd = gloves.GroupBy(i => i)
+                       .Where(g => g.Count() >= 2)
+                       .Select(g => new { g.Key, pairs = g.Count() / 2 });
+
+        var tot = xd.Sum(i => Math.Floor((decimal)i.pairs));
+
+        return (int)tot;
+    }
+
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine(NumberOfPairs(new string[] { "red", "green", "red", "blue", "blue" }));
+        Console.WriteLine(NumberOfPairs(new string[] { "red", "red", "red", "red", "red", "red" }));
+        Console.WriteLine(NumberOfPairs(new string[] { "Green", "Blue", "Purple", "Gray" }));
+        Console.WriteLine(NumberOfPairs(new string[] { }));
+    }
+}
+*/
 
 
 
@@ -1232,9 +1279,206 @@ public static class Kata2
 
 
 
+//     6 kyu   Consecutive strings
+// You are given an array(list) strarr of strings and an integer k.
+// Your task is to return the first longest string consisting of k
+// consecutive strings taken in the array.
+// 
+// Examples:
+// strarr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], k = 2
+// 
+// Concatenate the consecutive strings of strarr by 2, we get:
+// 
+// treefoling   (length 10)  concatenation of strarr[0] and strarr[1]
+// folingtrashy("      12)  concatenation of strarr[1] and strarr[2]
+// trashyblue   ("      10)  concatenation of strarr[2] and strarr[3]
+// blueabcdef   ("      10)  concatenation of strarr[3] and strarr[4]
+// abcdefuvwxyz ("      12)  concatenation of strarr[4] and strarr[5]
+// 
+// Two strings are the longest: "folingtrashy" and "abcdefuvwxyz".
+// The first that came is "folingtrashy" so
+// longest_consec(strarr, 2) should return "folingtrashy".
+// 
+// In the same way:
+// longest_consec(["zone", "abigail", "theta", "form", "libe", "zas",
+// "theta", "abigail"], 2) --> "abigailtheta"
+// n being the length of the string array, if n = 0 or k > n or k <= 0
+// return "" (return Nothing in Elm, "nothing" in Erlang).
+
+// {"zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"}, 2),
+// "abigailtheta");
+
+// { "ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh" }, 1),
+// "oocccffuucccjjjkkkjyyyeehh");
+
+// { }, 3),
+// "");
+
+// { "itvayloxrp", "wkppqsztdkmvcuwvereiupccauycnjutlv", "vweqilsfytihvrzlaodfixoyxvyuyvgpck" }, 2),
+// "wkppqsztdkmvcuwvereiupccauycnjutlvvweqilsfytihvrzlaodfixoyxvyuyvgpck");
+
+// { "wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu" }, 2),
+// "wlwsasphmxxowiaxujylentrklctozmymu");
 
 
 
+
+
+//      *****************
+
+/*
+
+public static class Kata2
+{
+
+
+    public static string LongestConsec(string[] strarr, int k)
+    {
+        if (k < 0 || k > strarr.Length || strarr.Length <= 0 || k == 0) return "";
+
+        var tot = new List<string>();
+
+        for (int i = 0; i < strarr.Length - k + 1; i++)
+        {
+            var newWo = "";
+            for (int j = 0; j < k; j++)
+            {
+                newWo += strarr[i + j];
+            }
+
+            if (!tot.Contains(newWo)) tot.Add(newWo);
+        }
+
+        return tot.OrderByDescending(w => w.Length).First();
+    }
+
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine(LongestConsec(new string[]
+            { "zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail" }, 2));
+        Console.WriteLine(LongestConsec(new string[]
+            { "ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh" }, 1));
+        Console.WriteLine(LongestConsec(new string[]
+            { }, 3));
+        Console.WriteLine(LongestConsec(new string[]
+            { "itvayloxrp", "wkppqsztdkmvcuwvereiupccauycnjutlv", "vweqilsfytihvrzlaodfixoyxvyuyvgpck" }, 2));
+        Console.WriteLine(LongestConsec(new string[]
+            { "wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu" }, 2));
+        Console.WriteLine(LongestConsec(new string[]
+            { "zone", "abigail", "theta", "form", "libe", "zas" }, -2));
+        Console.WriteLine(LongestConsec(new string[]
+            { "it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz" }, 15));
+        Console.WriteLine(LongestConsec(new string[]
+            { "it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz" }, 0));
+    }
+}
+*/
+
+
+
+
+
+/*
+//     6 kyu   Find The Parity Outlier
+    // You are given an array(which will have a length of at least 3, but could be very large) containing integers.The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
+    //     Examples
+    //     [2, 4, 0, 100, 4, 11, 2602, 36]
+    //     Should return: 11 (the only odd number)
+    // 
+    // [160, 3, 1719, 19, 11, 13, -21]
+    //     Should return: 160 (the only even number)
+
+
+
+    public static class Kata2
+    {
+        public static int Find(int[] integers)
+        {
+            var even = integers.Where(i => i % 2 == 0);
+            var odd = integers.Where(i => i % 2 != 0);
+
+            return even.Count() > odd.Count() ? odd.First() : even.First();
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Find(new int[] { 2, 4, 0, 100, 4, 11, 2602, 36 }));
+            Console.WriteLine(Find(new int[] { 160, 3, 1719, 19, 11, 13, -21 }));
+            //Console.WriteLine(Find(new int[] { }));
+        }
+
+*/
+
+
+
+
+
+
+
+//      *****************
+
+
+/*
+//     6 kyu   Replace With Alphabet Position
+    // 
+    // In this kata you are required to, given a string, replace every
+    // letter with its position in the alphabet.
+    // 
+    // If anything in the text isn't a letter, ignore it and don't return it.
+    // 
+    // "a" = 1, "b" = 2, etc.
+    // 
+    // Example
+    // Kata.AlphabetPosition("The sunset sets at twelve o' clock.")
+    // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15
+    // 3 12 15 3 11" ( as a string )
+
+    //     ("The sunset sets at twelve o' clock."));
+    // ("20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11", 
+    // 
+    //     ("The narwhal bacons at midnight."));
+    // ("20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20", 
+
+
+
+    // int index = char.ToUpper(c) - 64;
+
+    public static class Kata2
+    {
+        public static string AlphabetPosition(string text)
+        {
+            //  var arr = text.Select(c =>
+            //  {
+            //      if (Char.IsLetter(c))
+            //      {
+            //          return char.ToUpper(c) - 64;
+            //      }else
+            //      {
+            //          return -1;
+            //      }                    
+            //  }).Where(n => n != -1);
+                
+            //  return string.Join(" ", arr);
+
+            var listilla = text.ToLower()
+                            .Where(c => char.IsLetter(c))
+                            .Select(c => "abcdefghijklmnopqrstuvwxyz".IndexOf(c) + 1)
+                            .ToArray();
+
+            return string.Join(" ", listilla);
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(AlphabetPosition("The sunset sets at twelve o' clock."));
+            Console.WriteLine(AlphabetPosition("The narwhal bacons at midnight."));
+            // Console.WriteLine( AlphabetPosition( ) );
+        }
+    }
+*/
 
 
 
