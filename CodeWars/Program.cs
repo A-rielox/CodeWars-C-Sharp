@@ -1064,22 +1064,21 @@ using System.Numerics;
 
 public static class Kata2
 {
-
-
     public static int CountZeros(int n)
     {
-        var allFactors = Enumerable.Range(1, n).Where(i => n % 2 == 0 ? i % 2 == 0 : i % 2 != 0).ToArray();
+        var allFactors = Enumerable.Range(1, n)
+                                   .Where(i => n % 2 == 0 ? 
+                                               i % 2 == 0 : 
+                                               i % 2 != 0)
+                                   .ToArray();
 
         BigInteger result = 1;
         for (int i = 0; i <= allFactors.Count() - 1; i++)
         {
             result *= allFactors[i];
         }
-
-
         return string.Concat(result.ToString().Reverse()).TakeWhile(n => n == '0').Count();
     }
-
 
     static void Main(string[] args)
     {
@@ -1131,7 +1130,9 @@ public static class Kata2
 
     public static bool Narcissistic(int value)
     {
-        var arr = value.ToString().Select(i => int.Parse(i.ToString())).ToList();
+        var arr = value.ToString()
+                       .Select(i => int.Parse(i.ToString()))
+                       .ToList();
 
         double tot = 0;
 
@@ -1478,6 +1479,62 @@ public static class Kata2
             // Console.WriteLine( AlphabetPosition( ) );
         }
     }
+*/
+
+
+/*
+ * 
+ * 
+ * //     6 kyu   Find the odd int
+    // Given an array of integers, find the one that appears
+    // an odd number of times.
+    // 
+    // There will always be only one integer that appears an
+    // odd number of times.
+    //     Examples
+    // [7] should return 7, because it occurs 1 time (which is odd).
+    // [0] should return 0, because it occurs 1 time(which is odd).
+    // [1,1,2] should return 2, because it occurs 1 time(which is odd).
+    // [0,1,0,1,0] should return 0, because it occurs 3 times(which is odd).
+    // [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears
+    // 1 time(which is odd).
+
+
+
+    // int index = char.ToUpper(c) - 64;
+
+    public static class Kata2
+    {
+        public static int find_it(int[] seq)
+        {
+            var nums = seq.Distinct();
+
+            int theOne = 0;
+
+            foreach (var i in nums)
+            {
+                var times = seq.Count(n => n == i);
+
+                if (times % 2 != 0)
+                {
+                    theOne = i;
+                };
+            }
+
+            return theOne;
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(find_it(new[] { 20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5 })); // 5
+            Console.WriteLine(find_it(new[] { 0 })); //0
+            Console.WriteLine(find_it(new[] { 0, 1, 0, 1, 0 })); //0
+            Console.WriteLine(find_it(new[] { 1, 1, 2 })); // 2
+            Console.WriteLine(find_it(new[] { 1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1 })); // 4
+        }
+    }
+
 */
 
 

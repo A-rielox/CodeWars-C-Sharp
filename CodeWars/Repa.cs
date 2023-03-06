@@ -1,10 +1,28 @@
 ﻿
 using static Repa;
 using System.Diagnostics.Metrics;
+using Microsoft.VisualBasic;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.ComponentModel;
+using System.Security.Cryptography;
+using System;
 
 internal class Repa
 {
-    
+    //     6 kyu   Sum of Digits / Digital Root
+    // Digital root is the recursive sum of all the
+    // digits in a number.
+    // 
+    // Given n, take the sum of the digits of n. If that
+    // value has more than one digit, continue reducing in
+    // this way until a single-digit number is produced.The
+    // input will be a non-negative integer.
+    // 
+    // Examples
+    //     16  -->  1 + 6 = 7
+    //    942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+    // 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+    // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
 
 
 
@@ -12,35 +30,22 @@ internal class Repa
 
     public static class Kata2
     {
-        public static string AlphabetPosition(string text)
+        public static int DigitalRoot(long n)
         {
-            //  var arr = text.Select(c =>
-            //  {
-            //      if (Char.IsLetter(c))
-            //      {
-            //          return char.ToUpper(c) - 64;
-            //      }else
-            //      {
-            //          return -1;
-            //      }                    
-            //  }).Where(n => n != -1);
-                
-            //  return string.Join(" ", arr);
-
-            var listilla = text.ToLower()
-                            .Where(c => char.IsLetter(c))
-                            .Select(c => "abcdefghijklmnopqrstuvwxyz".IndexOf(c) + 1)
-                            .ToArray();
-
-            return string.Join(" ", listilla);
+            // Your awesome code here!
+            return 0;
         }
 
 
         static void Main(string[] args)
         {
-            Console.WriteLine(AlphabetPosition("The sunset sets at twelve o' clock."));
-            Console.WriteLine(AlphabetPosition("The narwhal bacons at midnight."));
-            // Console.WriteLine( AlphabetPosition( ) );
+            Console.WriteLine(DigitalRoot(0)); // 0
+            Console.WriteLine(DigitalRoot(10)); // 1
+            Console.WriteLine(DigitalRoot(17)); // 8
+            Console.WriteLine(DigitalRoot(942); // 6
+            Console.WriteLine(DigitalRoot(132189)); // 6
+            Console.WriteLine(DigitalRoot(493193); // 2
+            
         }
     }
 
