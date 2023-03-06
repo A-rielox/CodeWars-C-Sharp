@@ -1539,3 +1539,162 @@ public static class Kata2
 
 
 
+/*
+
+//     6 kyu   Sum of Digits / Digital Root
+    // Digital root is the recursive sum of all the
+    // digits in a number.
+    // 
+    // Given n, take the sum of the digits of n. If that
+    // value has more than one digit, continue reducing in
+    // this way until a single-digit number is produced.The
+    // input will be a non-negative integer.
+    // 
+    // Examples
+    //     16  -->  1 + 6 = 7
+    //    942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+    // 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+    // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+
+
+
+    // int index = char.ToUpper(c) - 64;
+
+    public static class Kata2
+    {
+        public static int DigitalRoot(long n)
+        {
+            var strSum = n.ToString();
+
+            while (strSum.Length > 1)
+            {
+                strSum = strSum.Sum(i => int.Parse(i.ToString())).ToString();
+            }
+
+            return int.Parse(strSum);
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(DigitalRoot(0)); // 0
+            Console.WriteLine(DigitalRoot(10)); // 1
+            Console.WriteLine(DigitalRoot(17)); // 8
+            Console.WriteLine(DigitalRoot(942)); // 6
+            Console.WriteLine(DigitalRoot(132189)); // 6
+            Console.WriteLine(DigitalRoot(493193)); // 2
+            
+        }
+    }
+
+*/
+
+
+
+/*
+
+//     6 kyu    Who likes it?
+    // You probably know the "like" system from Facebook and other pages.
+    // People can "like" blog posts, pictures or other items. We want to
+    // create the text that should be displayed next to such an item.
+    // 
+    // Implement the function which takes an array containing the names of
+    // people that like an item. It must return the display text as shown in
+    // the examples:
+    // 
+    // []                                -->  "no one likes this"
+    // ["Peter"]                         -->  "Peter likes this"
+    // ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+    // ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+    // ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+    // Note: For 4 or more names, the number in "and 2 others" simply increases.
+
+
+
+    // int index = char.ToUpper(c) - 64;
+
+    public static class Kata2
+    {
+        public static string Likes(string[] name)
+        {
+            if (!name.Any()) return "no one likes this";
+
+            int len = name.Length;
+
+            var sentence = len switch
+            {
+                1 => name[0] + " likes this",
+                2 => $"{name[0]} and {name[1]} like this",
+                3 => $"{name[0]}, {name[1]} and {name[2]} like this",
+                _ => $"{name[0]}, {name[1]} and {len - 2} others like this"
+            };
+
+            return sentence;
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Likes( new string[0])); // 
+            Console.WriteLine(Likes(new string[] { "Peter" })); // 
+            Console.WriteLine(Likes(new string[] { "Jacob", "Alex" })); // 
+            Console.WriteLine(Likes(new string[] { "Max", "John", "Mark" })); // 
+            Console.WriteLine(Likes(new string[] { "Alex", "Jacob", "Mark", "Max" })); // 
+            Console.WriteLine(Likes(new string[] { "Alex", "Jacob", "Mark", "Max", "Alex", "Jacob" })); // 
+        }
+    }
+
+*/
+
+
+
+/*
+
+
+
+//     5 kyu     Moving Zeros To The End
+    // Write an algorithm that takes an array and moves all of the
+    // zeros to the end, preserving the order of the other elements.
+    // 
+    // Kata.MoveZeroes(new int[] {1, 2, 0, 1, 0, 1, 0, 3, 0, 1}) =>
+    // new int[] { 1, 2, 1, 1, 3, 1, 0, 0, 0, 0 }
+
+
+
+    // int index = char.ToUpper(c) - 64;
+
+    public static class Kata2
+    {
+        public static int[] MoveZeroes(int[] arr)
+        {
+            // var listilla = arr.ToList();
+            // var howManyZeros = 0;
+
+            // while (listilla.Contains(0))
+            // {
+            //     listilla.Remove(0);
+            //     howManyZeros++;
+            // }
+
+            // for (int i = 0; i < howManyZeros; i++)
+            // {
+            //     listilla.Add(0);
+            // }
+
+            // return listilla.ToArray();
+
+            return arr.Where(n => n != 0).Concat(arr.Where(n => n == 0)).ToArray();
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(MoveZeroes(new int[] { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 } )); // 
+        }
+    }
+
+*/
+
+
+
+

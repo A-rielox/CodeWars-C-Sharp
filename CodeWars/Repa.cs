@@ -1,28 +1,12 @@
 ﻿
-using static Repa;
-using System.Diagnostics.Metrics;
-using Microsoft.VisualBasic;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.ComponentModel;
-using System.Security.Cryptography;
-using System;
-
 internal class Repa
 {
-    //     6 kyu   Sum of Digits / Digital Root
-    // Digital root is the recursive sum of all the
-    // digits in a number.
+    //     5 kyu     Moving Zeros To The End
+    // Write an algorithm that takes an array and moves all of the
+    // zeros to the end, preserving the order of the other elements.
     // 
-    // Given n, take the sum of the digits of n. If that
-    // value has more than one digit, continue reducing in
-    // this way until a single-digit number is produced.The
-    // input will be a non-negative integer.
-    // 
-    // Examples
-    //     16  -->  1 + 6 = 7
-    //    942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
-    // 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
-    // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+    // Kata.MoveZeroes(new int[] {1, 2, 0, 1, 0, 1, 0, 3, 0, 1}) =>
+    // new int[] { 1, 2, 1, 1, 3, 1, 0, 0, 0, 0 }
 
 
 
@@ -30,22 +14,31 @@ internal class Repa
 
     public static class Kata2
     {
-        public static int DigitalRoot(long n)
+        public static int[] MoveZeroes(int[] arr)
         {
-            // Your awesome code here!
-            return 0;
+            // var listilla = arr.ToList();
+            // var howManyZeros = 0;
+
+            // while (listilla.Contains(0))
+            // {
+            //     listilla.Remove(0);
+            //     howManyZeros++;
+            // }
+
+            // for (int i = 0; i < howManyZeros; i++)
+            // {
+            //     listilla.Add(0);
+            // }
+
+            // return listilla.ToArray();
+
+            return arr.Where(n => n != 0).Concat(arr.Where(n => n == 0)).ToArray();
         }
 
 
         static void Main(string[] args)
         {
-            Console.WriteLine(DigitalRoot(0)); // 0
-            Console.WriteLine(DigitalRoot(10)); // 1
-            Console.WriteLine(DigitalRoot(17)); // 8
-            Console.WriteLine(DigitalRoot(942); // 6
-            Console.WriteLine(DigitalRoot(132189)); // 6
-            Console.WriteLine(DigitalRoot(493193); // 2
-            
+            Console.WriteLine(MoveZeroes(new int[] { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 } )); // 
         }
     }
 
