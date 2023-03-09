@@ -211,15 +211,6 @@ namespace Solution
 
 
 
-
-
-
-
-
-
-
-
-
 // Multiples of 3 or 5
 // 
 // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
@@ -1698,3 +1689,197 @@ public static class Kata2
 
 
 
+/*
+
+
+//     6 kyu  Array.diff
+    // Your goal in this kata is to implement a difference
+    // function, which subtracts one list from another and
+    // returns the result.
+    // 
+    // It should remove all values from list a, which are
+    // present in list b keeping their order.
+    // 
+    // Kata.ArrayDiff(new int[] {1, 2}, new int[] { 1 }) => new int[] { 2 }
+    // If a value is present in b, all of its occurrences
+    // must be removed from the other:
+    // 
+    // Kata.ArrayDiff(new int[] { 1, 2, 2, 2, 3 }, new int[] { 2 }) => new int[] { 1, 3 }
+
+    // (new int[] {2},       Kata.ArrayDiff(new int[] { 1, 2 }, new int[] { 1 }));
+    // (new int[] { 2, 2 }, Kata.ArrayDiff(new int[] { 1, 2, 2 }, new int[] { 1 }));
+    // (new int[] { 1 }, Kata.ArrayDiff(new int[] { 1, 2, 2 }, new int[] { 2 }));
+    // (new int[] { 1, 2, 2 }, Kata.ArrayDiff(new int[] { 1, 2, 2 }, new int[] { }));
+    // (new int[] { }, Kata.ArrayDiff(new int[] { }, new int[] { 1, 2 }));
+    // (new int[] { 3 }, Kata.ArrayDiff(new int[] { 1, 2, 3 }, new int[] { 1, 2 }));
+
+
+
+
+    public static class Kata2
+    {
+        public static int[] ArrayDiff(int[] a, int[] b)
+        {
+            var rs = a.Where(n => !b.Contains(n)).ToArray();
+
+            return rs;
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(ArrayDiff(new int[] { 1, 2 }, new int[] { 1 }));
+            Console.WriteLine(ArrayDiff(new int[] { 1, 2, 2 }, new int[] { 1 }));
+            Console.WriteLine(ArrayDiff(new int[] { 1, 2, 2 }, new int[] { 2 }));
+            Console.WriteLine(ArrayDiff(new int[] { 1, 2, 2 }, new int[] { }));
+            Console.WriteLine(ArrayDiff(new int[] { }, new int[] { 1, 2 }));
+            Console.WriteLine(ArrayDiff(new int[] { 1, 2, 3 }, new int[] { 1, 2 }));
+        }
+    }
+
+
+*/
+
+
+
+/*
+
+
+//     6 kyu   Create Phone Number
+    // Write a function that accepts an array of 10 integers(between 0
+    // and 9), that returns a string of those numbers in the form of a
+    // phone number.
+
+    //     Example
+    // Kata.CreatePhoneNumber(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0})
+    // => returns "(123) 456-7890"
+
+    // The returned format must be correct in order to complete this challenge.
+    // 
+    // Don't forget the space after the closing parentheses!
+
+    // (new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, ExpectedResult = "(123) 456-7890")]
+    // (new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, ExpectedResult = "(111) 111-1111")]
+
+
+    public static class Kata2
+{
+        public static string CreatePhoneNumber(int[] numbers)
+        {
+            var str =  string.Join("",numbers);
+
+            return "(" + str.Substring(0,3) + ") " + str.Substring(3,3) + "-" + str.Substring(6,4);
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(CreatePhoneNumber(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }));
+            Console.WriteLine(CreatePhoneNumber(new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }));
+        }
+    }
+
+*/
+
+
+
+
+/*
+
+//     6 kyu    Persistent Bugger.
+    // Write a function, persistence, that takes in a positive parameter num and
+    // returns its multiplicative persistence, which is the number of times you
+    // must multiply the digits in num until you reach a single digit.
+    //     For example(Input --> Output):
+    // 
+    // 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+    // 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+    // 4 --> 0 (because 4 is already a one-digit number)
+
+    // (3, Persist.Persistence(39));
+    // (0, Persist.Persistence(4));
+    // (2, Persist.Persistence(25));
+    // (4, Persist.Persistence(999));
+
+
+    public static class Kata2
+    {
+        public static int Persistence(long n)
+        {
+            var nArr = n.ToString().Select(i => int.Parse(i.ToString()));
+            var times = 0;
+
+            while(nArr.Count() > 1)
+            {
+                var mult = nArr.Aggregate(1, (t, i) => t * i);
+
+                nArr = mult.ToString().Select(i => int.Parse(i.ToString()));
+
+                times++;
+            }
+
+            return times;
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Persistence(39));
+            Console.WriteLine(Persistence(4));
+            Console.WriteLine(Persistence(25));
+            Console.WriteLine(Persistence(999));
+        }
+    }
+
+*/
+
+
+/*
+
+
+//     6 kyu    Your order, please
+    // Your task is to sort a given string. Each word in the string will
+    // contain a single number.This number is the position the word should
+    // have in the result.
+    // 
+    // Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+    // 
+    // If the input string is empty, return an empty string. The words in
+    // the input String will only contain valid consecutive numbers.
+    // 
+    // Examples
+    // "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+    // "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+    // ""  -->  ""
+
+
+    public static class Kata2
+    {
+        public static string Order(string words)
+        {
+            if (words.Equals("")) return "";
+
+            var wordsArr = words.Split(' ').ToList();
+            var final = new string[wordsArr.Count()];
+
+            foreach (var word in wordsArr)
+            {
+                var strNum = word.Where(c => !char.IsLetter(c));
+                var num = int.Parse(strNum.First().ToString());
+
+                final[num - 1] = word;
+            }
+
+            return string.Join(" ",final);
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Order("is2 Thi1s T4est 3a"));
+            Console.WriteLine(Order("4of Fo1r pe6ople g3ood th5e the2"));
+            Console.WriteLine(Order(""));
+        }
+    }
+
+*/

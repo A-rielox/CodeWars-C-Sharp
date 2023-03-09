@@ -1,47 +1,52 @@
 ﻿
 internal class Repa
 {
-    //     5 kyu     Moving Zeros To The End
-    // Write an algorithm that takes an array and moves all of the
-    // zeros to the end, preserving the order of the other elements.
+    //     6 kyu    Your order, please
+    // Your task is to sort a given string. Each word in the string will
+    // contain a single number.This number is the position the word should
+    // have in the result.
     // 
-    // Kata.MoveZeroes(new int[] {1, 2, 0, 1, 0, 1, 0, 3, 0, 1}) =>
-    // new int[] { 1, 2, 1, 1, 3, 1, 0, 0, 0, 0 }
+    // Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+    // 
+    // If the input string is empty, return an empty string. The words in
+    // the input String will only contain valid consecutive numbers.
+    // 
+    // Examples
+    // "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+    // "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+    // ""  -->  ""
 
-
-
-    // int index = char.ToUpper(c) - 64;
 
     public static class Kata2
     {
-        public static int[] MoveZeroes(int[] arr)
+        public static string Order(string words)
         {
-            // var listilla = arr.ToList();
-            // var howManyZeros = 0;
+            if (words.Equals("")) return "";
 
-            // while (listilla.Contains(0))
-            // {
-            //     listilla.Remove(0);
-            //     howManyZeros++;
-            // }
+            var wordsArr = words.Split(' ').ToList();
+            var final = new string[wordsArr.Count()];
 
-            // for (int i = 0; i < howManyZeros; i++)
-            // {
-            //     listilla.Add(0);
-            // }
+            foreach (var word in wordsArr)
+            {
+                var strNum = word.Where(c => !char.IsLetter(c));
+                var num = int.Parse(strNum.First().ToString());
 
-            // return listilla.ToArray();
+                final[num - 1] = word;
+            }
 
-            return arr.Where(n => n != 0).Concat(arr.Where(n => n == 0)).ToArray();
+            return string.Join(" ",final);
         }
 
 
         static void Main(string[] args)
         {
-            Console.WriteLine(MoveZeroes(new int[] { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 } )); // 
+            Console.WriteLine(Order("is2 Thi1s T4est 3a"));
+            Console.WriteLine(Order("4of Fo1r pe6ople g3ood th5e the2"));
+            Console.WriteLine(Order(""));
         }
     }
 
+    // int index = char.ToUpper(c) - 64;
 
     public static int Count(string str)
     {
