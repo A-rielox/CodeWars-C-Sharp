@@ -1,48 +1,42 @@
-﻿
-internal class Repa
+﻿internal class Repa
 {
-    //     6 kyu    Your order, please
-    // Your task is to sort a given string. Each word in the string will
-    // contain a single number.This number is the position the word should
-    // have in the result.
+    //     6 kyu    Mexican Wave
+    // Rules
+    //  1.  The input string will always be lower case but maybe empty.
     // 
-    // Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
-    // 
-    // If the input string is empty, return an empty string. The words in
-    // the input String will only contain valid consecutive numbers.
-    // 
-    // Examples
-    // "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
-    // "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
-    // ""  -->  ""
+    //  2.  If the character in the string is whitespace then pass over
+    //  it as if it was an empty seat
+    //     Example
+    // wave("hello") => { "Hello", "hEllo", "heLlo", "helLo", "hellO"}
 
 
     public static class Kata2
     {
-        public static string Order(string words)
+        public static List<string> wave(string str)
         {
-            if (words.Equals("")) return "";
+            var strArr = str.Select(c => c.ToString()).ToList();
+            var listilla = new List<string>();
 
-            var wordsArr = words.Split(' ').ToList();
-            var final = new string[wordsArr.Count()];
 
-            foreach (var word in wordsArr)
+            for (int i = 0; i < str.Length; i++)
             {
-                var strNum = word.Where(c => !char.IsLetter(c));
-                var num = int.Parse(strNum.First().ToString());
+                var strArrCop = strArr.Select(c => c.ToLower()).ToList();
+                strArrCop[i] = strArrCop[i].ToUpper();
 
-                final[num - 1] = word;
+                if(strArrCop[i] != " ")
+                {
+                    listilla.Add(string.Join("", strArrCop));
+                }
             }
 
-            return string.Join(" ",final);
+            return listilla;
         }
 
 
         static void Main(string[] args)
         {
-            Console.WriteLine(Order("is2 Thi1s T4est 3a"));
-            Console.WriteLine(Order("4of Fo1r pe6ople g3ood th5e the2"));
-            Console.WriteLine(Order(""));
+            Console.WriteLine(wave("hello"));
+            Console.WriteLine(wave("two words"));            
         }
     }
 
