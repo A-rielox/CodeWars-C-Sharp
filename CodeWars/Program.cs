@@ -602,17 +602,15 @@ public static class Kata
         return listilla;
     }
 
-
     static void Main(string[] args)
     {
         Console.WriteLine(ReverseSeq(5));
-
     }
 
 
 }
-
 */
+
 
 
 
@@ -2014,3 +2012,45 @@ public static class Kata2
     }
 
 */
+
+
+
+/*
+
+//     6 kyu    Sort the odd
+    // You will be given an array of numbers.You have to sort the odd
+    // numbers in ascending order while leaving the even numbers at their
+    // original positions.
+    // 
+    // Examples
+    // [7, 1]  =>  [1, 7]
+    // [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+    // [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+
+    public static class Kata2
+    {
+        public static int[] SortArray(int[] array)
+        {
+            var odds = array.Where(i => i % 2 != 0).OrderBy(n => n).ToList();
+
+            var oddIdx = 0;
+
+            var ordered = array.Select(i => (i % 2 == 0) ? i : odds[oddIdx++] );
+           
+            return ordered.ToArray();
+        }
+
+        static void Main(string[] args)
+        {
+            //Console.WriteLine(SortArray(new int[] { 7, 1 }));
+            //Console.WriteLine(SortArray(new int[] { 5, 8, 6, 3, 4 }));
+            Console.WriteLine(SortArray(new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }));
+            Console.WriteLine(SortArray(new int[] { 15, 17, 43, 20, 17, 21, 23, 43, 43, 48, 47, 61, 17, 38, 67, 63, 28 }));
+        }
+    }
+
+*/
+
+
+
