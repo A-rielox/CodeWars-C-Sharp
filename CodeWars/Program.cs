@@ -329,6 +329,21 @@ public class Kata
         Console.WriteLine(Kata.SpinWords("This is a test"));
         Console.WriteLine(Kata.SpinWords("This is another test"));
     }
+
+        // EN JAVITASCRIPCITO
+        // function spinWords(string) {
+        //    let arr = string.split(' ');
+        
+        //    let newArr = arr.map(el => {
+        //       if (el.length >= 5) {
+        //          return [...el].reverse().join('');
+        //       } else {
+        //          return el;
+        //       }
+        //    });
+        
+        //    return newArr.join(' ');
+        // }
 }
 */
 
@@ -365,6 +380,18 @@ namespace codewar
 
             return string.Join("", final);
         }
+
+        //  public static string ToCamelCase(string str)
+        //  {
+        //      var singleArr = str.ToLower().Split('-', '_');
+            
+        //      var singleCameled = singleArr.Select((w, idx) =>
+        //                  {
+        //                      return idx == 0 ? w : w.Substring(0, 1).ToUpper() + w.Substring(1);
+        //                  });
+            
+        //      return string.Join("", singleCameled);
+        //  }
 
         static void Main(string[] args)
         {
@@ -716,6 +743,11 @@ public static class Kata
         return year % 100 == 0 ? year / 100 : (year / 100) + 1;
     }
 
+    // public static int СenturyFromYear(int year)
+    // {
+    //     return (int)Math.Ceiling((decimal)year / 100); 
+    // }
+
 
     static void Main(string[] args)
     {
@@ -775,6 +807,20 @@ public static class Kata2
 
         return count == 0 ? true : false;
     }
+
+        //  public static bool ValidParentheses(string input)
+        //  {
+        //      var theCount = 0;
+        //      foreach (var c in input)
+        //      {
+        //          if (c == '(') theCount++;
+        //          if (c == ')') theCount--;
+            
+        //          if(theCount < 0) return false;
+        //      }
+            
+        //      return theCount == 0;
+        //  }
 
     static void Main(string[] args)
     {

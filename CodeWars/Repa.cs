@@ -1,36 +1,40 @@
-﻿internal class Repa
+﻿using static Repa;
+
+internal class Repa
 {
-
-    //     6 kyu    Sort the odd
-    // You will be given an array of numbers.You have to sort the odd
-    // numbers in ascending order while leaving the even numbers at their
-    // original positions.
-    // 
-    // Examples
-    // [7, 1]  =>  [1, 7]
-    // [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
-    // [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
-
 
     public static class Kata2
     {
-        public static int[] SortArray(int[] array)
+        // 6 kyu    Counting Duplicates
+        // Write a function that will return the count of distinct case-insensitive
+        // alphabetic characters and numeric digits that occur more than once in the
+        // input string. The input string can be assumed to contain only alphabets(both
+        // uppercase and lowercase) and numeric digits.
+        // 
+        // Example
+        // "abcde" -> 0 # no characters repeats more than once
+        // "aabbcde" -> 2 # 'a' and 'b'
+        // "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+        // "indivisibility" -> 1 # 'i' occurs six times
+        // "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+        // "aA11" -> 2 # 'a' and '1'
+        // "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+
+        public static int DuplicateCount(string str)
         {
-            var odds = array.Where(i => i % 2 != 0).OrderBy(n => n).ToList();
-
-            var oddIdx = 0;
-
-            var ordered = array.Select(i => (i % 2 == 0) ? i : odds[oddIdx++] );
-           
-            return ordered.ToArray();
+            
         }
 
         static void Main(string[] args)
         {
-            //Console.WriteLine(SortArray(new int[] { 7, 1 }));
-            //Console.WriteLine(SortArray(new int[] { 5, 8, 6, 3, 4 }));
-            Console.WriteLine(SortArray(new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }));
-            Console.WriteLine(SortArray(new int[] { 15, 17, 43, 20, 17, 21, 23, 43, 43, 48, 47, 61, 17, 38, 67, 63, 28 }));
+            Console.WriteLine(DuplicateCount("abcde"));
+            Console.WriteLine(DuplicateCount("aabbcde"));
+            Console.WriteLine(DuplicateCount("aabBcde"));
+            Console.WriteLine(DuplicateCount("indivisibility"));
+            Console.WriteLine(DuplicateCount("Indivisibilities"));
+            Console.WriteLine(DuplicateCount("aA11"));
+            Console.WriteLine(DuplicateCount("ABBA"));
         }
     }
 
