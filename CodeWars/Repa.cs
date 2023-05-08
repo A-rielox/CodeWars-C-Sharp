@@ -1,4 +1,5 @@
-﻿using static Repa;
+﻿using System.Numerics;
+using static Repa;
 
 internal class Repa
 {
@@ -6,6 +7,469 @@ internal class Repa
 
     public static class Kata2
     {
+        //     6 kyu   Replace With Alphabet Position
+        // 
+        // In this kata you are required to, given a string, replace every
+        // letter with its position in the alphabet.
+        // 
+        // If anything in the text isn't a letter, ignore it and don't return it.
+        // 
+        // "a" = 1, "b" = 2, etc.
+        // 
+        // Example
+        // Kata.AlphabetPosition("The sunset sets at twelve o' clock.")
+        // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15
+        // 3 12 15 3 11" ( as a string )
+
+        //     ("The sunset sets at twelve o' clock."));
+        // ("20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11", 
+        // 
+        //     ("The narwhal bacons at midnight."));
+        // ("20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20", 
+
+        public static string AlphabetPosition(string text)
+        {
+            var alph = "abcdefghijklmnopqrstuvwxyz";
+            var justLett = text.ToLower().Where(c => char.IsLetter(c));
+
+            var idxs = justLett.Select(c => alph.IndexOf(c) + 1);
+
+
+
+            return string.Join(" ",idxs);
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(AlphabetPosition("The sunset sets at twelve o' clock."));
+            Console.WriteLine(AlphabetPosition("The narwhal bacons at midnight."));
+            // Console.WriteLine( AlphabetPosition( ) );
+        }
+
+
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+        //     6 kyu   Find The Parity Outlier
+        // You are given an array(which will have a length of at least 3, but could be very large)
+        // containing integers.The array is either entirely comprised of odd integers or entirely
+        // comprised of even integers except for a single integer N. Write a method that takes
+        // the array as an argument and returns this "outlier" N.
+
+        //     Examples
+        //     [2, 4, 0, 100, 4, 11, 2602, 36]
+        //     Should return: 11 (the only odd number)
+        // 
+        // [160, 3, 1719, 19, 11, 13, -21]
+        //     Should return: 160 (the only even number)
+
+        //public static int Find(int[] integers)
+        //{
+
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(Find(new int[] { 2, 4, 0, 100, 4, 11, 2602, 36 }));
+        //    Console.WriteLine(Find(new int[] { 160, 3, 1719, 19, 11, 13, -21 }));
+        //    //Console.WriteLine(Find(new int[] { }));
+        //}
+
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+        //     6 kyu  Pair of gloves
+        // Winter is coming, you must prepare your ski holidays.The
+        // objective of this kata is to determine the number of pair
+        // of gloves you can constitute from the gloves you have in your
+        // drawer.
+        // 
+        // Given an array describing the color of each glove, return the
+        // number of pairs you can constitute, assuming that only gloves of
+        // the same color can form pairs.
+        // 
+        // Examples:
+        // input = ["red", "green", "red", "blue", "blue"]
+        // result = 2(1 red pair + 1 blue pair)
+        // 
+        // input = ["red", "red", "red", "red", "red", "red"]
+        // result = 3(3 red pairs)
+
+        // Assertion(0, new string[] {"Green", "Blue", "Purple", "Gray"});
+        // Assertion(0, new string[] { });
+
+        //public static int NumberOfPairs(string[] gloves)
+        //{
+
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(NumberOfPairs(new string[] { "red", "green", "red", "blue", "blue" }));
+        //    Console.WriteLine(NumberOfPairs(new string[] { "red", "red", "red", "red", "red", "red" }));
+        //    Console.WriteLine(NumberOfPairs(new string[] { "Green", "Blue", "Purple", "Gray" }));
+        //    Console.WriteLine(NumberOfPairs(new string[] { }));
+        //}
+
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+        //     6 kyu
+        // Is a number prime?
+        // Define a function that takes an integer argument and returns a
+        // logical value true or false depending on if the integer is a prime.
+        //     Per Wikipedia, a prime number (or a prime) is a natural number
+        // greater than 1 that has no positive divisors other than 1 and itself.
+        // 
+        // Requirements
+        // You can assume you will be given an integer input.
+        // You can not assume that the integer will be only positive.You may be
+        // given negative numbers as well (or 0 ).
+
+        // Example
+        // is_prime(1)   false
+        // is_prime(2)   true 
+        // is_prime(-1)  false
+        // yield return new TestCaseData(0).Returns(false);
+        // yield return new TestCaseData(1).Returns(false);
+        // yield return new TestCaseData(2).Returns(true);
+
+        //public static bool IsPrime(int n)
+        //{
+        //    if(n <= 1) return false;
+
+        //    var primesUnder = Enumerable.Range(1, n).Where(i => n % i == 0).ToArray();
+
+        //    var isIt = primesUnder.SequenceEqual(new int[] { 1, n });
+
+        //    return isIt;
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(IsPrime(0));
+        //    Console.WriteLine(IsPrime(1));
+        //    Console.WriteLine(IsPrime(2));
+        //    Console.WriteLine(IsPrime(7));
+        //    Console.WriteLine(IsPrime(11));
+        //    Console.WriteLine(IsPrime(20));
+        //    Console.WriteLine(IsPrime(-5));
+        //}
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+        //     6 kyu  Does my number look big in this?
+        // DESCRIPTION:
+        // A Narcissistic Number(or Armstrong Number) is a positive number
+        // which is the sum of its own digits, each raised to the power of
+        // the number of digits in a given base. In this Kata, we will restrict
+        // ourselves to decimal (base 10).
+        // 
+        // For example, take 153 (3 digits), which is narcissistic:
+        //     1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+        //
+        // and 1652 (4 digits), which isn't:
+        //     1^4 + 6^4 + 5^4 + 2^4 = 1 + 1296 + 625 + 16 = 1938
+        // The Challenge:
+        // 
+        // Your code must return true or false (not 'true' and 'false') depending
+        // upon whether the given number is a Narcissistic number in base 10.
+        // 
+        // This may be True and False in your language, e.g.PHP.
+        //     Error checking for text strings or other invalid inputs is not
+        //     required, only valid positive non-zero integers will be passed
+        //     into the function.
+
+        // "1 is narcissitic" --> true
+        // "371 is narcissitic" --> true
+
+        //public static bool Narcissistic(int value)
+        //{
+        //    var singles = value.ToString().Select(c => int.Parse(c.ToString()));
+
+        //    var sumXd = singles.Sum(n => Math.Pow(n,singles.Count()));
+
+        //    return sumXd == value;
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(Narcissistic(153));
+        //    Console.WriteLine(Narcissistic(371));
+        //    Console.WriteLine(Narcissistic(1652));
+        //}
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+
+        //     6 kyu  Jungerstein's Math Training Room: 1. How many zeros are at
+        //     the end of n!! ?
+        // Instructions
+        // Define n!! as
+        // 
+        // n!! = 1 * 3 * 5 * ... * n if n is odd,
+        // 
+        // n!! = 2 * 4 * 6 * ... * n if n is even.
+        // 
+        // Hence 8!! = 2 * 4 * 6 * 8 = 384, there is no zero at the end.
+        //
+        // 30!! has 3 zeros at the end.
+        // 
+        // For a positive integer n, please count how many zeros are there at the
+        // end of n!!.
+        // 
+        // Example:
+        // 
+        // 30!! = 2 * 4 * 6 * 8 * 10 * ... * 22 * 24 * 26 * 28 * 30 
+        // 30!! = 42849873690624000 (3 zeros at the end)
+
+        //Act(0, 8);
+        //Act(1, 14);
+        //Act(3, 30);
+
+        //public static int CountZeros(int n)
+        //{
+        //    var nums = Enumerable.Range(1,n).Where(i => n % 2 == 0 ? i % 2 == 0 : i % 2 != 0 );
+
+        //    BigInteger mult = 1;
+
+        //    foreach (var i in nums)
+        //    {
+        //        mult = mult * i;
+        //    }
+
+        //    var zeroessss = mult.ToString()
+        //                        .Select(c => (int)int.Parse(c.ToString()))
+        //                        .Reverse()
+        //                        .TakeWhile(n => n == 0)
+        //                        .Count();
+
+        //    return 2;
+        //}
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(CountZeros(8));
+        //    Console.WriteLine(CountZeros(14));
+        //    Console.WriteLine(CountZeros(30));
+        //    Console.WriteLine(CountZeros(500));
+        //}
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+
+        //         6 kyu   Are they the "same"?
+        // Given two arrays a and b write a function comp(a, b) (orcompSame(a, b))
+        // that checks whether the two arrays have the "same" elements, with the same
+        // multiplicities(the multiplicity of a member is the number of times it appears).
+        // "Same" means, here, that the elements in b are the elements in a squared,
+        // regardless of the order.
+        //         Examples
+        //         Valid arrays
+        // a = [121, 144, 19, 161, 19, 144, 19, 11]
+        // b = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+        //         comp(a, b) returns true because in b 121 is the square of 11, 14641
+        //         is the square of 121, 20736 the square of 144, 361 the square of 19,
+        //         25921 the square of 161, and so on.It gets obvious if we write b's
+        //         elements in terms of squares:
+        // 
+        // a = [121, 144, 19, 161, 19, 144, 19, 11]
+        //         b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
+        //               fd        pp       kk     fk       yy     kf       fj      hh          
+        //         Invalid arrays
+        // If, for example, we change the first number to something else, comp is not
+        // returning true anymore:
+        // 
+        // a = [121, 144, 19, 161, 19, 144, 19, 11]
+        //         b = [132, 14641, 20736, 361, 25921, 361, 20736, 361]
+        //         comp(a, b) returns false because in b 132 is not the square of any
+        //         number of a.
+        //         a = [121, 144, 19, 161, 19, 144, 19, 11]
+        // b = [121, 14641, 20736, 36100, 25921, 361, 20736, 361]
+        //         comp(a, b) returns false because in b 36100 is not the square of any
+        //         number of a.
+        // 
+        // 
+        //         Remarks
+        //         a or b might be [] or { }
+        //         (all languages except R, Shell).
+        // a or b might be nil or null or None or nothing(except in C++, COBOL, Crystal,
+        // D, Dart, Elixir, Fortran, F#, Haskell, Nim, OCaml, Pascal, Perl, PowerShell,
+        // Prolog, PureScript, R, Racket, Rust, Shell, Swift).
+        // If a or b are nil (or null or None, depending on the language), the problem
+        // doesn't make sense so return false.
+
+        //public static bool comp(int[] a, int[] b)
+        //{
+
+        //}
+
+        //static void Main(string[] args)
+        //{
+        //    int[] a = new int[] { 121, 144, 19, 161, 19, 144, 19, 11 };
+
+        //    int[] b = new int[] { 121, 14641, 20736, 361, 25921, 361, 20736, 361 };
+        //    int[] c = new int[] { 11 * 11, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19 };
+        //    int[] d = new int[] { 132, 14641, 20736, 361, 25921, 361, 20736, 361 };
+        //    int[] e = new int[] { 121, 14641, 20736, 36100, 25921, 361, 20736, 361 };
+
+
+        //    Console.WriteLine(comp(a, b)); // t
+        //    Console.WriteLine(comp(a, c)); // t
+        //    Console.WriteLine(comp(a, d)); // f
+        //    Console.WriteLine(comp(a, e)); // f
+        //}
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+        // 6 kyu    Counting Duplicates
+        // Write a function that will return the count of distinct case-insensitive
+        // alphabetic characters and numeric digits that occur more than once in the
+        // input string. The input string can be assumed to contain only alphabets(both
+        // uppercase and lowercase) and numeric digits.
+        // 
+        // Example
+        // "abcde" -> 0 # no characters repeats more than once
+        // "aabbcde" -> 2 # 'a' and 'b'
+        // "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+        // "indivisibility" -> 1 # 'i' occurs six times
+        // "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+        // "aA11" -> 2 # 'a' and '1'
+        // "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+        //public static int DuplicateCount(string str)
+        //{
+
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(DuplicateCount("abcde"));
+        //    Console.WriteLine(DuplicateCount("aabbcde"));
+        //    Console.WriteLine(DuplicateCount("aabBcde"));
+        //    Console.WriteLine(DuplicateCount("indivisibility"));
+        //    Console.WriteLine(DuplicateCount("Indivisibilities"));
+        //    Console.WriteLine(DuplicateCount("aA11"));
+        //    Console.WriteLine(DuplicateCount("ABBA"));
+        //}
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+
+
         //         6 kyu      Count characters in your string
         // The main idea is to count all the occurring characters in a string.
         // If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
@@ -23,23 +487,16 @@ internal class Repa
         // IDictionary<int, string> numberNames = new Dictionary<int, string>();
         // numberNames.Add(1,"One"); //adding a key/value using the Add() method
 
-        public static Dictionary<char, int> Count(string str)
-        {
-            var dic = new Dictionary<char, int>();
-            var singleChars = str.Distinct().ToList();
+        //public static Dictionary<char, int> Count(string str)
+        //{
 
-            singleChars.ForEach(c => dic.Add(c, str.Count(i => i == c)));
+        //}
 
-
-
-            return dic;
-        }
-
-        static void Main(string[] args)
-        {
-            Console.WriteLine(Count("aaaa"));
-            Console.WriteLine(Count("aabb"));
-        }
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(Count("aaaa"));
+        //    Console.WriteLine(Count("aabb"));
+        //}
 
 
 
