@@ -6,6 +6,89 @@ internal class Repa
 
     public static class Kata2
     {
+        //     8 kyu    Reversed sequence
+        // Instructions 
+        // Build a function that returns an array of integers from n to 1 where n>0.
+        // 
+        // Example : n=5 --> [5,4,3,2,1]
+
+        public static int[] ReverseSeq(int n)
+        {
+            return Enumerable.Range(1,n).Reverse().ToArray();
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(string.Join(" ", ReverseSeq(5)));
+        }
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+        // 7 kyu    Printer Errors
+        // Instructions
+
+        // LETRAS CORRECTAS SON a --> m , EL RESTO SON ERRORES
+        // ENCONTRAR EL RATIO ERRORES (FUERA DE A - M) / TOTAL DE CHARS
+
+        // 
+        // The string has a length greater or equal to one and contains only letters from ato z.
+        // 
+        // Examples:
+        // s= "aaabbbbhaijjjm"
+        // printer_error(s) => "0/14"
+        // 
+        // s= "aaaxbbbbyyhwawiwjjjwwm"
+        // printer_error(s) => "8/22"
+
+        // aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz  3/56
+
+        //public static string PrinterError(String s)
+        //{
+
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(PrinterError("aaabbbbhaijjjm"));
+        //    Console.WriteLine(PrinterError("aaaxbbbbyyhwawiwjjjwwm"));
+        //    Console.WriteLine(PrinterError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"));
+        //}
+
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
 
 
 
@@ -25,19 +108,17 @@ internal class Repa
         // a = "abcdefghijklmnopqrstuvwxyz"
         // longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 
-        public static string Longest(string s1, string s2)
-        {
+        //public static string Longest(string s1, string s2)
+        //{
+
+        //}
 
 
-            return "sf";
-        }
-
-
-        static void Main(string[] args)
-        {
-            Console.WriteLine(Longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"));
-            Console.WriteLine(Longest("abcdefghijklmnopqrstuvwxyz", "abcdefghijklmnopqrstuvwxyz"));
-        }
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(Longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"));
+        //    Console.WriteLine(Longest("abcdefghijklmnopqrstuvwxyz", "abcdefghijklmnopqrstuvwxyz"));
+        //}
 
 
 
@@ -413,7 +494,28 @@ internal class Repa
         //    Console.WriteLine(Kata2.IsSquare(7));
         //    Console.WriteLine(Kata2.IsSquare(9));
         //}
+
+
     }
+
+    //static void Main()
+    //{
+    //    // Console.WriteLine(string.Join(" ", toIntArr("1 2 3 4 5 6 7")));
+
+    //    var rnd = new Random();
+
+    //    var xd = Enumerable.Range(0,26).Select(n => (char)(n + 'a'));
+
+    //    Console.WriteLine(string.Join(" ",xd));
+
+    //}
+
+    //public static int[] toIntArr(string str)
+    //{
+
+
+    //    return new int[] { };
+    //}
 
 
 
