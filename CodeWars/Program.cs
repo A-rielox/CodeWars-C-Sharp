@@ -1572,7 +1572,7 @@ public static class Kata2
 
 /*
 
-//     6 kyu   Sum of Digits / Digital Root
+    //     6 kyu   Sum of Digits / Digital Root
     // Digital root is the recursive sum of all the
     // digits in a number.
     // 
@@ -1624,7 +1624,7 @@ public static class Kata2
 
 /*
 
-//     6 kyu    Who likes it?
+    //     6 kyu    Who likes it?
     // You probably know the "like" system from Facebook and other pages.
     // People can "like" blog posts, pictures or other items. We want to
     // create the text that should be displayed next to such an item.
@@ -1683,7 +1683,7 @@ public static class Kata2
 
 
 
-//     5 kyu     Moving Zeros To The End
+    //     5 kyu     Moving Zeros To The End
     // Write an algorithm that takes an array and moves all of the
     // zeros to the end, preserving the order of the other elements.
     // 
@@ -1732,7 +1732,7 @@ public static class Kata2
 /*
 
 
-//     6 kyu  Array.diff
+    //     6 kyu  Array.diff
     // Your goal in this kata is to implement a difference
     // function, which subtracts one list from another and
     // returns the result.
@@ -1785,7 +1785,7 @@ public static class Kata2
 /*
 
 
-//     6 kyu   Create Phone Number
+    //     6 kyu   Create Phone Number
     // Write a function that accepts an array of 10 integers(between 0
     // and 9), that returns a string of those numbers in the form of a
     // phone number.
@@ -1826,7 +1826,7 @@ public static class Kata2
 
 /*
 
-//     6 kyu    Persistent Bugger.
+    //     6 kyu    Persistent Bugger.
     // Write a function, persistence, that takes in a positive parameter num and
     // returns its multiplicative persistence, which is the number of times you
     // must multiply the digits in num until you reach a single digit.
@@ -1877,7 +1877,7 @@ public static class Kata2
 /*
 
 
-//     6 kyu    Your order, please
+    //     6 kyu    Your order, please
     // Your task is to sort a given string. Each word in the string will
     // contain a single number.This number is the position the word should
     // have in the result.
@@ -1927,7 +1927,7 @@ public static class Kata2
 
 /*
 
-//     6 kyu    Equal Sides Of An Array
+    //     6 kyu    Equal Sides Of An Array
     // You are going to be given an array of integers.Your job is to take
     // that array and find an index N where the sum of the integers to the
     // left of N is equal to the sum of the integers to the right of N. If

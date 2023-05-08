@@ -3,10 +3,418 @@ using static Repa;
 
 internal class Repa
 {
-    // linea 934
 
     public static class Kata2
     {
+        //     6 kyu    Equal Sides Of An Array
+        // You are going to be given an array of integers.Your job is to take
+        // that array and find an index N where the sum of the integers to the
+        // left of N is equal to the sum of the integers to the right of N. If
+        // there is no index that would make this happen, return -1.
+        // 
+        // For example:
+        // 
+        // Let's say you are given the array {1,2,3,4,3,2,1}:
+        // Your function will return the index 3, 
+        // 
+        // Let's look at another one.
+        // You are given the array {1,100,50,-51,1,1}:
+        // Your function will return the index 1, 
+        // 
+        // Last one:
+        // You are given the array {20,10,-80,10,10,15,35}
+        // At index 0 the left side is {}
+
+        // The right side is {10,-80,10,10,15,35}
+        // They both are equal to 0 when added. (Empty arrays are equal to 0 in
+        // this problem)
+        // Index 0 is the place where the left side and right side are equal.
+        // 
+        
+        // 
+        // Output:
+        // The lowest index N where the side to the left of N is equal to the side
+        // to the right of N. If you do not find an index that fits these rules, then
+        // you will return -1.
+        // 
+        // Note:
+        // If you are given an array with multiple answers, return the lowest correct index.
+
+        // (3,--> (new int[] {1,2,3,4,3,2,1}));
+        // (1, --> (new int[] { 1, 100, 50, -51, 1, 1 }));
+        // (-1, --> (new int[] { 1, 2, 3, 4, 5, 6 }));
+        // (3, --> (new int[] { 20, 10, 30, 10, 10, 15, 35 }));
+
+        public static int FindEvenIndex(int[] arr)
+        {
+
+
+            return 2;
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(FindEvenIndex(new int[] { 1, 2, 3, 4, 3, 2, 1 }));
+            Console.WriteLine(FindEvenIndex(new int[] { 1, 100, 50, -51, 1, 1 }));
+            Console.WriteLine(FindEvenIndex(new int[] { 1, 2, 3, 4, 5, 6 }));
+            Console.WriteLine(FindEvenIndex(new int[] { 20, 10, 30, 10, 10, 15, 35 }));
+        }
+
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+        //     6 kyu    Your order, please
+        // Your task is to sort a given string. Each word in the string will
+        // contain a single number.This number is the position the word should
+        // have in the result.
+        // 
+        // Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+        // 
+        // If the input string is empty, return an empty string. The words in
+        // the input String will only contain valid consecutive numbers.
+        // 
+        // Examples
+        // "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+        // "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+        // ""  -->  ""
+
+        //public static string Order(string words)
+        //{
+        //    if (words == "") return "";
+
+        //    var singleWords = words.Split(" ");
+        //    var ordered = new string[singleWords.Count()];
+
+        //    foreach (var item in singleWords)
+        //    {
+        //        var idx = item.Where(c => char.IsNumber(c));
+        //        var toNum = int.Parse(idx.First().ToString());
+
+        //        ordered[toNum - 1] = item;
+        //    }
+
+        //    return string.Join(" ", ordered);
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(Order("is2 Thi1s T4est 3a"));
+        //    Console.WriteLine(Order("4of Fo1r pe6ople g3ood th5e the2"));
+        //    Console.WriteLine(Order(""));
+        //}
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+        //     6 kyu    Persistent Bugger.
+        // Write a function, persistence, that takes in a positive parameter num and
+        // returns its multiplicative persistence, which is the number of times you
+        // must multiply the digits in num until you reach a single digit.
+        //     For example(Input --> Output):
+        // 
+        // 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+        // 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+        // 4 --> 0 (because 4 is already a one-digit number)
+
+        // (3, Persist.Persistence(39));
+        // (0, Persist.Persistence(4));
+        // (2, Persist.Persistence(25));
+        // (4, Persist.Persistence(999));
+
+        //public static int Persistence(long n)
+        //{
+
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(Persistence(39));
+        //    Console.WriteLine(Persistence(4));
+        //    Console.WriteLine(Persistence(25));
+        //    Console.WriteLine(Persistence(999));
+        //}
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+        //     6 kyu   Create Phone Number
+        // Write a function that accepts an array of 10 integers(between 0
+        // and 9), that returns a string of those numbers in the form of a
+        // phone number.
+
+        //     Example
+        // Kata.CreatePhoneNumber(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0})
+        // => returns "(123) 456-7890"
+
+        // The returned format must be correct in order to complete this challenge.
+        // 
+        // Don't forget the space after the closing parentheses!
+
+        // (new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, ExpectedResult = "(123) 456-7890")]
+        // (new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, ExpectedResult = "(111) 111-1111")]
+
+        //public static string CreatePhoneNumber(int[] numbers)
+        //{
+        //    var asStr = string.Join("", numbers);
+        //    var newStr = string.Format($"({asStr.Substring(0,3)}) {asStr.Substring(3, 3)}-{asStr.Substring(6, 4)}");
+
+        //    return newStr;
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(CreatePhoneNumber(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }));
+        //    Console.WriteLine(CreatePhoneNumber(new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }));
+        //}
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+        //     6 kyu  Array.diff
+        // Your goal in this kata is to implement a difference
+        // function, which subtracts one list from another and
+        // returns the result.
+        // 
+        // It should remove all values from list a, which are
+        // present in list b keeping their order.
+        // 
+        // Kata.ArrayDiff(new int[] {1, 2}, new int[] { 1 }) => new int[] { 2 }
+        // If a value is present in b, all of its occurrences
+        // must be removed from the other:
+        // 
+        // Kata.ArrayDiff(new int[] { 1, 2, 2, 2, 3 }, new int[] { 2 }) => new int[] { 1, 3 }
+
+        // (new int[] {2},       Kata.ArrayDiff(new int[] { 1, 2 }, new int[] { 1 }));
+        // (new int[] { 2, 2 }, Kata.ArrayDiff(new int[] { 1, 2, 2 }, new int[] { 1 }));
+        // (new int[] { 1 }, Kata.ArrayDiff(new int[] { 1, 2, 2 }, new int[] { 2 }));
+        // (new int[] { 1, 2, 2 }, Kata.ArrayDiff(new int[] { 1, 2, 2 }, new int[] { }));
+        // (new int[] { }, Kata.ArrayDiff(new int[] { }, new int[] { 1, 2 }));
+        // (new int[] { 3 }, Kata.ArrayDiff(new int[] { 1, 2, 3 }, new int[] { 1, 2 }));
+
+        //public static int[] ArrayDiff(int[] a, int[] b)
+        //{
+        //    return a.Except(b).ToArray();
+
+        //    // o
+        //    // var rs = a.Where(n => !b.Contains(n)).ToArray();
+        //    // return rs;
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(string.Join(" ", ArrayDiff(new int[] { 1, 2 }, new int[] { 1 })));
+        //    Console.WriteLine(string.Join(" ", ArrayDiff(new int[] { 1, 2, 2 }, new int[] { 1 })));
+        //    Console.WriteLine(string.Join(" ", ArrayDiff(new int[] { 1, 2, 2 }, new int[] { 2 })));
+        //    Console.WriteLine(string.Join(" ", ArrayDiff(new int[] { 1, 2, 2 }, new int[] { })));
+        //    Console.WriteLine(string.Join(" ", ArrayDiff(new int[] { }, new int[] { 1, 2 })));
+        //    Console.WriteLine(string.Join(" ", ArrayDiff(new int[] { 1, 2, 3 }, new int[] { 1, 2 })));
+        //}
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+        //     5 kyu     Moving Zeros To The End
+        // Write an algorithm that takes an array and moves all of the
+        // zeros to the end, preserving the order of the other elements.
+        // 
+        // Kata.MoveZeroes(new int[] {1, 2, 0, 1, 0, 1, 0, 3, 0, 1}) =>
+        // new int[] { 1, 2, 1, 1, 3, 1, 0, 0, 0, 0 }
+
+
+        //public static int[] MoveZeroes(int[] arr)
+        //{
+        //    var justZeroes = arr.Where(n => n == 0);            
+
+        //    return arr.Where(n => n != 0).Concat(justZeroes).ToArray();
+        //}
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(string.Join(" ", MoveZeroes(new int[] { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 }))); // 
+        //}
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+        //     6 kyu   Sum of Digits / Digital Root
+        // Digital root is the recursive sum of all the
+        // digits in a number.
+        // 
+        // Given n, take the sum of the digits of n. If that
+        // value has more than one digit, continue reducing in
+        // this way until a single-digit number is produced.The
+        // input will be a non-negative integer.
+        // 
+        // Examples
+        //     16  -->  1 + 6 = 7
+        //    942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+        // 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+        // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+
+
+
+        // int index = char.ToUpper(c) - 64;
+
+        //public static int DigitalRoot(long n)
+        //{
+        //    var singles = n.ToString().Select(n => int.Parse(n.ToString()));
+        //    var sum = 0;
+
+        //    while (singles.Count() > 1)
+        //    {
+        //        sum = singles.Sum();
+
+        //        singles = sum.ToString().Select(n => int.Parse(n.ToString()));
+        //    }
+
+        //    return sum;
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(DigitalRoot(0)); // 0
+        //    Console.WriteLine(DigitalRoot(10)); // 1
+        //    Console.WriteLine(DigitalRoot(17)); // 8
+        //    Console.WriteLine(DigitalRoot(942)); // 6
+        //    Console.WriteLine(DigitalRoot(132189)); // 6
+        //    Console.WriteLine(DigitalRoot(493193)); // 2
+        //}
+
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+        //     6 kyu   Find the odd int
+        // Given an array of integers, find the one that appears
+        // an odd number of times.
+        // 
+        // There will always be only one integer that appears an
+        // odd number of times.
+        //     Examples
+        // [7] should return 7, because it occurs 1 time (which is odd).
+        // [0] should return 0, because it occurs 1 time(which is odd).
+        // [1,1,2] should return 2, because it occurs 1 time(which is odd).
+        // [0,1,0,1,0] should return 0, because it occurs 3 times(which is odd).
+        // [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears
+        // 1 time(which is odd).
+
+        //public static int find_it(int[] seq)
+        //{
+        //    var grouped = seq.GroupBy(n => n).Select(g => new { g.Key, Count = g.Count() });
+
+        //    foreach (var item in grouped)
+        //    {
+        //        if (item.Count % 2 != 0) return item.Key;
+        //    }
+
+        //    return -1;
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(find_it(new[] { 20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5 })); // 5
+        //    Console.WriteLine(find_it(new[] { 0 })); //0
+        //    Console.WriteLine(find_it(new[] { 0, 1, 0, 1, 0 })); //0
+        //    Console.WriteLine(find_it(new[] { 1, 1, 2 })); // 2
+        //    Console.WriteLine(find_it(new[] { 1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1 })); // 4
+        //}
+
+
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
         //     6 kyu   Replace With Alphabet Position
         // 
         // In this kata you are required to, given a string, replace every
@@ -27,25 +435,23 @@ internal class Repa
         //     ("The narwhal bacons at midnight."));
         // ("20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20", 
 
-        public static string AlphabetPosition(string text)
-        {
-            var alph = "abcdefghijklmnopqrstuvwxyz";
-            var justLett = text.ToLower().Where(c => char.IsLetter(c));
+        //public static string AlphabetPosition(string text)
+        //{
+        //    var alph = "abcdefghijklmnopqrstuvwxyz";
+        //    var justLett = text.ToLower().Where(c => char.IsLetter(c));
 
-            var idxs = justLett.Select(c => alph.IndexOf(c) + 1);
+        //    var idxs = justLett.Select(c => alph.IndexOf(c) + 1);
 
-
-
-            return string.Join(" ",idxs);
-        }
+        //    return string.Join(" ",idxs);
+        //}
 
 
-        static void Main(string[] args)
-        {
-            Console.WriteLine(AlphabetPosition("The sunset sets at twelve o' clock."));
-            Console.WriteLine(AlphabetPosition("The narwhal bacons at midnight."));
-            // Console.WriteLine( AlphabetPosition( ) );
-        }
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(AlphabetPosition("The sunset sets at twelve o' clock."));
+        //    Console.WriteLine(AlphabetPosition("The narwhal bacons at midnight."));
+        //    // Console.WriteLine( AlphabetPosition( ) );
+        //}
 
 
 
