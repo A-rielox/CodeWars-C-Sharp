@@ -6,21 +6,227 @@ internal class Repa
 
     public static class Kata2
     {
+        //         6 kyu      Count characters in your string
+        // The main idea is to count all the occurring characters in a string.
+        // If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+        // 
+        // What if the string is empty? Then the result should be empty object
+        // literal, {}.
+
+        // d.Add('a', 4);
+        // Assert.AreEqual(d, Kata.Count("aaaa"));
+        // 
+        // d.Add('a', 2);
+        // d.Add('b', 2);
+        // Assert.AreEqual(d, Kata.Count("aabb"));
+
+        // IDictionary<int, string> numberNames = new Dictionary<int, string>();
+        // numberNames.Add(1,"One"); //adding a key/value using the Add() method
+
+        public static Dictionary<char, int> Count(string str)
+        {
+            var dic = new Dictionary<char, int>();
+            var singleChars = str.Distinct().ToList();
+
+            singleChars.ForEach(c => dic.Add(c, str.Count(i => i == c)));
+
+
+
+            return dic;
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Count("aaaa"));
+            Console.WriteLine(Count("aabb"));
+        }
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+        //     5 kyu   Valid Parentheses
+        // Write a function that takes a string of parentheses, and determines if
+        // the order of the parentheses is valid.The function should return true if
+        // the string is valid, and false if it's invalid.
+        // 
+        // Examples
+        // "()"              =>  true
+        // ")(()))"          =>  false
+        // "("               =>  false
+        // "(())((()())())"  =>  true
+        //
+        // Constraints
+        // 0 <= input.length <= 100
+        // 
+        // Along with opening(() and closing ()) parenthesis, input may contain
+        // any valid ASCII characters.Furthermore, the input string may be empty
+        // and/or not contain any parentheses at all.Do not treat other forms of
+        // brackets as parentheses(e.g. [], { }, <>).
+
+        //public static bool ValidParentheses(string input)
+        //{
+
+        //}
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(ValidParentheses("()"));
+        //    Console.WriteLine(ValidParentheses(")(()))"));
+        //    Console.WriteLine(ValidParentheses("("));
+        //    Console.WriteLine(ValidParentheses("(())((()())())"));
+        //}
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+        // 8 kyu   Century From Year
+        // Introduction
+        //     The first century spans from the year 1 up to and including the year 100,
+        // the second century - from the year 101 up to and including the year 200, etc.
+        // 
+        // Task
+        // Given a year, return the century it is in.
+        // 
+        // Examples
+        // 1705 --> 18
+        // 1900 --> 19
+        // 1601 --> 17
+        // 2000 --> 20
+
+        //public static int СenturyFromYear(int year)
+        //{
+
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(СenturyFromYear(1705));
+        //    Console.WriteLine(СenturyFromYear(1900));
+        //    Console.WriteLine(СenturyFromYear(1601));
+        //    Console.WriteLine(СenturyFromYear(2000));
+        //}
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+        //public static int SumMix(object[] x)
+        //{
+
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(SumMix(new object[] { 9, 3, "7", "3" })); // 22
+        //    Console.WriteLine(SumMix(new object[] { "5", "0", 9, 3, 2, 1, "9", 6, 7 })); // 42
+        //    Console.WriteLine(SumMix(new object[] { "3", 6, 6, 0, "5", 8, 5, "6", 2, "0" })); // 41
+        //}
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+        //     7 kyu   Vowel Count
+        // Return the number(count) of vowels in the given string.
+        // 
+        // We will consider a, e, i, o, u as vowels for this Kata(but not y).
+        // 
+        // The input string will only consist of lower case letters and/or spaces.
+        // Assert.AreEqual(5, Kata.GetVowelCount("abracadabra"), "Nope!");
+
+        //public static int GetVowelCount(string str)
+        //{
+
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(GetVowelCount("abracadabra"));
+        //}
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
+
+
+
         //     8 kyu    Reversed sequence
         // Instructions 
         // Build a function that returns an array of integers from n to 1 where n>0.
         // 
         // Example : n=5 --> [5,4,3,2,1]
 
-        public static int[] ReverseSeq(int n)
-        {
-            return Enumerable.Range(1,n).Reverse().ToArray();
-        }
+        //public static int[] ReverseSeq(int n)
+        //{
+        //    return Enumerable.Range(1,n).Reverse().ToArray();
+        //}
 
-        static void Main(string[] args)
-        {
-            Console.WriteLine(string.Join(" ", ReverseSeq(5)));
-        }
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(string.Join(" ", ReverseSeq(5)));
+        //}
 
 
 

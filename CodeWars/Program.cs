@@ -615,14 +615,12 @@ public static class Kata
 {
     public static int[] ReverseSeq(int n)
     {
-        var listilla = Enumerable.Range(1, n).Reverse().ToArray();
-
-        return listilla;
+        return Enumerable.Range(1,n).Reverse().ToArray();
     }
 
     static void Main(string[] args)
     {
-        Console.WriteLine(ReverseSeq(5));
+        Console.WriteLine(string.Join(" ", ReverseSeq(5)));
     }
 
 
@@ -697,6 +695,9 @@ public static class Kata
         //return sum;
 
         return x.Sum(i => Convert.ToInt32(i));
+
+        // o
+        // return x.Select(n => Convert.ToInt32(n)).Sum();
     }
 
 
