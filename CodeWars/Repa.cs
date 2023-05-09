@@ -6,6 +6,82 @@ internal class Repa
 
     public static class Kata2
     {
+
+        //     6 kyu    Sort the odd
+        // You will be given an array of numbers.You have to sort the odd
+        // numbers in ascending order while leaving the even numbers at their
+        // original positions.
+        // 
+        // Examples
+        // [7, 1]  =>  [1, 7]
+        // [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+        // [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+        public static int[] SortArray(int[] array)
+        {
+
+
+            return new int[] {};
+        }
+
+        static void Main(string[] args)
+        {
+            //Console.WriteLine(SortArray(new int[] { 7, 1 }));
+            //Console.WriteLine(SortArray(new int[] { 5, 8, 6, 3, 4 }));
+            Console.WriteLine(SortArray(new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }));
+            Console.WriteLine(SortArray(new int[] { 15, 17, 43, 20, 17, 21, 23, 43, 43, 48, 47, 61, 17, 38, 67, 63, 28 }));
+        }
+
+
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+        //     6 kyu    Mexican Wave
+        // Rules
+        //  1.  The input string will always be lower case but maybe empty.
+        // 
+        //  2.  If the character in the string is whitespace then pass over
+        //  it as if it was an empty seat
+        //     Example
+        // wave("hello") => { "Hello", "hEllo", "heLlo", "helLo", "hellO"}
+
+        //public static List<string> wave(string str)
+        //{
+
+        //}
+
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(string.Join(" ", wave("hello")));
+        //    Console.WriteLine(string.Join(" ", wave("two words")));
+        //}
+
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
         //     6 kyu    Equal Sides Of An Array
         // You are going to be given an array of integers.Your job is to take
         // that array and find an index N where the sum of the integers to the
@@ -30,7 +106,7 @@ internal class Repa
         // this problem)
         // Index 0 is the place where the left side and right side are equal.
         // 
-        
+
         // 
         // Output:
         // The lowest index N where the side to the left of N is equal to the side
@@ -45,21 +121,22 @@ internal class Repa
         // (-1, --> (new int[] { 1, 2, 3, 4, 5, 6 }));
         // (3, --> (new int[] { 20, 10, 30, 10, 10, 15, 35 }));
 
-        public static int FindEvenIndex(int[] arr)
-        {
+        // INDICE DONDE LA SUM A IZQ ES = A SUM DRCH
+        // EN NUM DONDE VA EL INDICE NO SE INCLUYE EN LA SUMA
+
+        //public static int FindEvenIndex(int[] arr)
+        //{
+
+        //}
 
 
-            return 2;
-        }
-
-
-        static void Main(string[] args)
-        {
-            Console.WriteLine(FindEvenIndex(new int[] { 1, 2, 3, 4, 3, 2, 1 }));
-            Console.WriteLine(FindEvenIndex(new int[] { 1, 100, 50, -51, 1, 1 }));
-            Console.WriteLine(FindEvenIndex(new int[] { 1, 2, 3, 4, 5, 6 }));
-            Console.WriteLine(FindEvenIndex(new int[] { 20, 10, 30, 10, 10, 15, 35 }));
-        }
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(FindEvenIndex(new int[] { 1, 2, 3, 4, 3, 2, 1 }));
+        //    Console.WriteLine(FindEvenIndex(new int[] { 1, 100, 50, -51, 1, 1 }));
+        //    Console.WriteLine(FindEvenIndex(new int[] { 1, 2, 3, 4, 5, 6 }));
+        //    Console.WriteLine(FindEvenIndex(new int[] { 20, 10, 30, 10, 10, 15, 35 }));
+        //}
 
 
 
@@ -92,20 +169,7 @@ internal class Repa
 
         //public static string Order(string words)
         //{
-        //    if (words == "") return "";
 
-        //    var singleWords = words.Split(" ");
-        //    var ordered = new string[singleWords.Count()];
-
-        //    foreach (var item in singleWords)
-        //    {
-        //        var idx = item.Where(c => char.IsNumber(c));
-        //        var toNum = int.Parse(idx.First().ToString());
-
-        //        ordered[toNum - 1] = item;
-        //    }
-
-        //    return string.Join(" ", ordered);
         //}
 
 
@@ -183,12 +247,8 @@ internal class Repa
 
         //public static string CreatePhoneNumber(int[] numbers)
         //{
-        //    var asStr = string.Join("", numbers);
-        //    var newStr = string.Format($"({asStr.Substring(0,3)}) {asStr.Substring(3, 3)}-{asStr.Substring(6, 4)}");
 
-        //    return newStr;
         //}
-
 
         //static void Main(string[] args)
         //{
@@ -232,13 +292,8 @@ internal class Repa
 
         //public static int[] ArrayDiff(int[] a, int[] b)
         //{
-        //    return a.Except(b).ToArray();
 
-        //    // o
-        //    // var rs = a.Where(n => !b.Contains(n)).ToArray();
-        //    // return rs;
         //}
-
 
         //static void Main(string[] args)
         //{
@@ -274,9 +329,7 @@ internal class Repa
 
         //public static int[] MoveZeroes(int[] arr)
         //{
-        //    var justZeroes = arr.Where(n => n == 0);            
 
-        //    return arr.Where(n => n != 0).Concat(justZeroes).ToArray();
         //}
 
         //static void Main(string[] args)
@@ -320,19 +373,8 @@ internal class Repa
 
         //public static int DigitalRoot(long n)
         //{
-        //    var singles = n.ToString().Select(n => int.Parse(n.ToString()));
-        //    var sum = 0;
 
-        //    while (singles.Count() > 1)
-        //    {
-        //        sum = singles.Sum();
-
-        //        singles = sum.ToString().Select(n => int.Parse(n.ToString()));
-        //    }
-
-        //    return sum;
         //}
-
 
         //static void Main(string[] args)
         //{
@@ -375,18 +417,12 @@ internal class Repa
         // [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears
         // 1 time(which is odd).
 
+        // RETORNAR EL Q APARESCA UN NUMERO IMPAR DE VECES
+
         //public static int find_it(int[] seq)
         //{
-        //    var grouped = seq.GroupBy(n => n).Select(g => new { g.Key, Count = g.Count() });
 
-        //    foreach (var item in grouped)
-        //    {
-        //        if (item.Count % 2 != 0) return item.Key;
-        //    }
-
-        //    return -1;
         //}
-
 
         //static void Main(string[] args)
         //{
@@ -437,14 +473,8 @@ internal class Repa
 
         //public static string AlphabetPosition(string text)
         //{
-        //    var alph = "abcdefghijklmnopqrstuvwxyz";
-        //    var justLett = text.ToLower().Where(c => char.IsLetter(c));
 
-        //    var idxs = justLett.Select(c => alph.IndexOf(c) + 1);
-
-        //    return string.Join(" ",idxs);
         //}
-
 
         //static void Main(string[] args)
         //{
@@ -587,15 +617,8 @@ internal class Repa
 
         //public static bool IsPrime(int n)
         //{
-        //    if(n <= 1) return false;
 
-        //    var primesUnder = Enumerable.Range(1, n).Where(i => n % i == 0).ToArray();
-
-        //    var isIt = primesUnder.SequenceEqual(new int[] { 1, n });
-
-        //    return isIt;
         //}
-
 
         //static void Main(string[] args)
         //{
@@ -650,13 +673,8 @@ internal class Repa
 
         //public static bool Narcissistic(int value)
         //{
-        //    var singles = value.ToString().Select(c => int.Parse(c.ToString()));
 
-        //    var sumXd = singles.Sum(n => Math.Pow(n,singles.Count()));
-
-        //    return sumXd == value;
         //}
-
 
         //static void Main(string[] args)
         //{
@@ -704,25 +722,12 @@ internal class Repa
         //Act(0, 8);
         //Act(1, 14);
         //Act(3, 30);
+        // n!! = 1 * 3 * 5 * ... * n if n is odd,
+        // n!! = 2 * 4 * 6 * ... * n if n is even.
 
         //public static int CountZeros(int n)
         //{
-        //    var nums = Enumerable.Range(1,n).Where(i => n % 2 == 0 ? i % 2 == 0 : i % 2 != 0 );
 
-        //    BigInteger mult = 1;
-
-        //    foreach (var i in nums)
-        //    {
-        //        mult = mult * i;
-        //    }
-
-        //    var zeroessss = mult.ToString()
-        //                        .Select(c => (int)int.Parse(c.ToString()))
-        //                        .Reverse()
-        //                        .TakeWhile(n => n == 0)
-        //                        .Count();
-
-        //    return 2;
         //}
 
         //static void Main(string[] args)
@@ -1083,7 +1088,7 @@ internal class Repa
 
         //public static int[] ReverseSeq(int n)
         //{
-        //    return Enumerable.Range(1,n).Reverse().ToArray();
+
         //}
 
         //static void Main(string[] args)

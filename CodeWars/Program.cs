@@ -1985,7 +1985,7 @@ public static class Kata2
             while (idx < arr.Length)
             {
                 var sumL = arr.Take(idx).Sum();
-                var sumR = arr.Skip(idx + 1).Take(arr.Length - idx).Sum();
+                var sumR = arr.Skip(idx + 1).Sum();
 
                 if(sumL ==  sumR) arrIdx.Add(idx);
                 idx++;
@@ -2013,7 +2013,7 @@ public static class Kata2
 /*
 
 
-//     6 kyu    Mexican Wave
+    //     6 kyu    Mexican Wave
     // Rules
     //  1.  The input string will always be lower case but maybe empty.
     // 
@@ -2059,7 +2059,7 @@ public static class Kata2
 
 /*
 
-//     6 kyu    Sort the odd
+    //     6 kyu    Sort the odd
     // You will be given an array of numbers.You have to sort the odd
     // numbers in ascending order while leaving the even numbers at their
     // original positions.
