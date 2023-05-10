@@ -6,6 +6,57 @@ internal class Repa
 
     public static class Kata2
     {
+        //     6 kyu    Convert to roman
+
+        //public static string ToRoman(int num)
+        //{
+        //    var romans = new Dictionary<int, string> {
+        //        { 1000, "M" }, { 900, "CM" }, { 500, "D" }, { 400, "CD" }, { 100, "C" }, { 90, "XC" },
+        //        { 50, "L" }, { 40, "XL" }, { 10, "X" }, { 9, "IX" }, { 5, "V" }, { 4, "IV" },
+        //        { 1, "I" } 
+        //    };
+
+        //    var res = num;
+        //    var romanNum = "";
+
+        //    foreach (var item in romans)
+        //    {
+        //        while(res >= item.Key)
+        //        {
+        //            romanNum += item.Value;
+        //            res -= item.Key;
+        //        }
+        //    }
+
+
+        //    return romanNum;
+        //}
+
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(ToRoman(10));
+        //    Console.WriteLine(ToRoman(9));
+        //    Console.WriteLine(ToRoman(19));
+        //    Console.WriteLine(ToRoman(20));
+        //    Console.WriteLine(ToRoman(21));
+        //}
+
+
+
+
+
+
+
+
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+
+
+
+
+
 
         //     6 kyu    Sort the odd
         // You will be given an array of numbers.You have to sort the odd
@@ -17,20 +68,18 @@ internal class Repa
         // [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
         // [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
 
-        public static int[] SortArray(int[] array)
-        {
+        //public static int[] SortArray(int[] array)
+        //{
 
+        //}
 
-            return new int[] {};
-        }
-
-        static void Main(string[] args)
-        {
-            //Console.WriteLine(SortArray(new int[] { 7, 1 }));
-            //Console.WriteLine(SortArray(new int[] { 5, 8, 6, 3, 4 }));
-            Console.WriteLine(SortArray(new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }));
-            Console.WriteLine(SortArray(new int[] { 15, 17, 43, 20, 17, 21, 23, 43, 43, 48, 47, 61, 17, 38, 67, 63, 28 }));
-        }
+        //static void Main(string[] args)
+        //{
+        //    //Console.WriteLine(SortArray(new int[] { 7, 1 }));
+        //    //Console.WriteLine(SortArray(new int[] { 5, 8, 6, 3, 4 }));
+        //    Console.WriteLine(string.Join(" ", SortArray(new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 })));
+        //    //Console.WriteLine(SortArray(new int[] { 15, 17, 43, 20, 17, 21, 23, 43, 43, 48, 47, 61, 17, 38, 67, 63, 28 }));
+        //}
 
 
 
@@ -169,7 +218,7 @@ internal class Repa
 
         //public static string Order(string words)
         //{
-
+            
         //}
 
 
