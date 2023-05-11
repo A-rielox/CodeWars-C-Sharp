@@ -218,7 +218,7 @@ internal class Repa
 
         //public static string Order(string words)
         //{
-            
+
         //}
 
 
@@ -666,7 +666,7 @@ internal class Repa
 
         //public static bool IsPrime(int n)
         //{
-
+            
         //}
 
         //static void Main(string[] args)
